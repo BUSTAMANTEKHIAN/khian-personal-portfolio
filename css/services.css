@@ -1,0 +1,10 @@
+/* Page-specific tweaks for services.html */
+.services-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.service-card-lg { padding: 40px; border: 1px solid var(--border); border-radius: var(--radius-md); }
+.service-card-lg .service-icon { width: 48px; height: 48px; margin-bottom: 24px; }
+.service-card-lg h3 { font-size: 21px; margin-bottom: 12px; }
+.service-card-lg p { color: var(--text-muted); font-size: 15px; }
+.service-card-lg .includes { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); display: grid; gap: 8px; }
+.service-card-lg .includes li { font-size: 13.5px; color: var(--text-muted); display: flex; gap: 8px; align-items: center; }
+.service-card-lg .includes li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+@media (max-width: 860px) { .services-full-grid { grid-template-columns: 1fr; } }
