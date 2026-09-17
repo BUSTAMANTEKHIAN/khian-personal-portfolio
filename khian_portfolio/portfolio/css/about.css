@@ -1,0 +1,13 @@
+/* Page-specific tweaks for about.html */
+.about-full-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+.about-full-visual { position: sticky; top: 110px; }
+.about-full-copy p { color: var(--text-muted); margin-bottom: 18px; max-width: 62ch; }
+.value-list { margin-top: 32px; display: grid; gap: 18px; }
+.value-item { display: flex; gap: 16px; }
+.value-item .n { font-family: var(--font-mono); color: var(--accent); font-size: 13px; padding-top: 3px; }
+.value-item h4 { font-size: 16px; margin-bottom: 4px; }
+.value-item p { color: var(--text-muted); font-size: 14.5px; margin: 0; }
+@media (max-width: 1024px) {
+  .about-full-grid { grid-template-columns: 1fr; }
+  .about-full-visual { position: static; max-width: 380px; }
+}
