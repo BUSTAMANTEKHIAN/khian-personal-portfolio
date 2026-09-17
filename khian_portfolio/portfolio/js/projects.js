@@ -14,7 +14,9 @@ function getCategories() {
 function projectCardHTML(p) {
   return `
     <div class="project-card reveal is-visible">
-      <div class="project-thumb"><div class="thumb-fill">${p.title}</div></div>
+      <div class="project-thumb">
+        <img src="${p.image}" alt="${p.title} preview">
+      </div>
       <div class="project-body">
         <span class="project-cat">${p.category}</span>
         <h3>${p.title}</h3>

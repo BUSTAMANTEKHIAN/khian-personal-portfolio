@@ -72,28 +72,100 @@ function initializePillGroups() {
 function initializeContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
+
   const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    status.className = "form-status";
 
+    status.className = "form-status";
+    status.textContent = "";
+
+    // Validate the form first
     if (!validateForm(form)) {
       status.textContent = "Please fix the fields highlighted below.";
       status.classList.add("is-visible", "is-error");
       return;
     }
 
-    // No backend is connected yet — this only confirms the form is valid.
-    // Wire this up to Formspree, EmailJS, or your own API endpoint to actually send it.
-    status.textContent = "Thanks — this form isn't connected to a backend yet, but your message looks good to send once it is.";
-    status.classList.add("is-visible", "is-success");
-    form.reset();
-    document.querySelectorAll(".pill-option.is-checked").forEach((o) => o.classList.remove("is-checked"));
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Sending...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        status.textContent =
+          "Message sent successfully! I'll get back to you soon.";
+
+        status.classList.add("is-visible", "is-success");
+
+        form.reset();
+
+        document
+          .querySelectorAll(".pill-option.is-checked")
+          .forEach((o) => o.classList.remove("is-checked"));
+
+      } else {
+        const data = await response.json();
+
+        if (data.errors) {
+          status.textContent =
+            data.errors.map((error) => error.message).join(", ");
+        } else {
+          status.textContent =
+            "Something went wrong. Please try again.";
+        }
+
+        status.classList.add("is-visible", "is-error");
+      }
+
+    } catch (error) {
+      status.textContent =
+        "Unable to send the message. Please check your internet connection.";
+
+      status.classList.add("is-visible", "is-error");
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalText;
+    }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initializePillGroups();
   initializeContactForm();
+});
+
+/* Contact Page Scripts & Auto-Download Trigger */
+
+function initializeAutoDownload() {
+  const downloadBtn = document.getElementById("auto-resume-btn");
+  if (!downloadBtn) return;
+
+  downloadBtn.addEventListener("click", () => {
+    // Show temporary feedback toast/text
+    const originalText = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = `✓ Downloading Resume...`;
+    downloadBtn.style.opacity = "0.85";
+
+    setTimeout(() => {
+      downloadBtn.innerHTML = originalText;
+      downloadBtn.style.opacity = "1";
+    }, 2500);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializeAutoDownload();
 });

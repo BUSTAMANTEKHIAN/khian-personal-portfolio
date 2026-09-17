@@ -50,6 +50,8 @@ No build step or server required — this is a static site. Open `index.html` di
 
 ```bash
 npx serve portfolio
+cd "C:\Users\sajoy\OneDrive\Desktop\khian_portfolio\portfolio"
+npm start
 ```
 
 ## Customizing
