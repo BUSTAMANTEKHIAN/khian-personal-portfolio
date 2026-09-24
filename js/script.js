@@ -38,39 +38,21 @@ function initializeMobileMenu() {
   const menu = document.querySelector("[data-mobile-menu]");
   if (!burger || !menu) return;
 
-  if (!menu.id) menu.id = "mobile-menu";
-  burger.setAttribute("aria-controls", menu.id);
-  menu.setAttribute("role", "navigation");
-  menu.setAttribute("aria-label", "Mobile navigation");
-  menu.setAttribute("aria-hidden", "true");
-  menu.inert = true;
-  const menuLinks = menu.querySelectorAll("a");
-  menuLinks.forEach((link) => link.setAttribute("tabindex", "-1"));
-
-  const closeMenu = (returnFocus = false) => {
+  const closeMenu = () => {
     burger.classList.remove("is-open");
     menu.classList.remove("is-open");
-    burger.setAttribute("aria-expanded", "false");
-    burger.setAttribute("aria-label", "Open menu");
-    menu.setAttribute("aria-hidden", "true");
-    menu.inert = true;
-    menuLinks.forEach((link) => link.setAttribute("tabindex", "-1"));
     document.body.style.overflow = "";
-    if (returnFocus) burger.focus();
+    burger.setAttribute("aria-expanded", "false");
   };
   const openMenu = () => {
     burger.classList.add("is-open");
     menu.classList.add("is-open");
-    burger.setAttribute("aria-expanded", "true");
-    burger.setAttribute("aria-label", "Close menu");
-    menu.setAttribute("aria-hidden", "false");
-    menu.inert = false;
-    menuLinks.forEach((link) => link.removeAttribute("tabindex"));
     document.body.style.overflow = "hidden";
+    burger.setAttribute("aria-expanded", "true");
   };
 
   burger.addEventListener("click", () => {
-    burger.classList.contains("is-open") ? closeMenu(true) : openMenu();
+    burger.classList.contains("is-open") ? closeMenu() : openMenu();
   });
 
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
@@ -82,8 +64,48 @@ function initializeMobileMenu() {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu(true);
+    if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu();
   });
+}
+
+/* ---------- Desktop-only custom cursor ---------- */
+function initializeCursor() {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const dot = document.createElement("span");
+  const ring = document.createElement("span");
+  dot.className = "cursor-dot";
+  ring.className = "cursor-ring";
+  dot.setAttribute("aria-hidden", "true");
+  ring.setAttribute("aria-hidden", "true");
+  document.body.append(dot, ring);
+  document.addEventListener("pointermove", (event) => {
+    dot.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+    ring.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+  }, { passive: true });
+  document.querySelectorAll("a, button, .project-card, .service-card, .service-card-lg, input, textarea").forEach((el) => {
+    el.addEventListener("pointerenter", () => document.body.classList.add("cursor-hover"));
+    el.addEventListener("pointerleave", () => document.body.classList.remove("cursor-hover"));
+  });
+}
+
+/* ---------- Accessible certificate viewer ---------- */
+function initializeCertificateViewer() {
+  const dialog = document.querySelector("[data-certificate-dialog]");
+  if (!dialog) return;
+  const title = dialog.querySelector("[data-certificate-title]");
+  const frame = dialog.querySelector("iframe");
+  let returnFocus = null;
+  const close = () => { dialog.close(); frame.removeAttribute("src"); if (returnFocus) returnFocus.focus(); };
+  document.querySelectorAll("[data-certificate-open]").forEach((button) => button.addEventListener("click", () => {
+    returnFocus = button;
+    title.textContent = button.dataset.title;
+    frame.src = button.dataset.file;
+    dialog.showModal();
+    dialog.querySelector("[data-certificate-close]").focus();
+  }));
+  dialog.querySelector("[data-certificate-close]").addEventListener("click", close);
+  dialog.addEventListener("click", (event) => { if (event.target === dialog) close(); });
+  dialog.addEventListener("cancel", () => { frame.removeAttribute("src"); });
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -176,4 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeBackToTop();
   initializeFAQ();
   initializeActiveNav();
+  initializeCursor();
+  initializeCertificateViewer();
 });

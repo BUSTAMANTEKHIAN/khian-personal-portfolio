@@ -30,7 +30,6 @@
 .field-error { font-size: 12.5px; color: var(--error); margin-top: 6px; min-height: 16px; }
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill-option {
-  position: relative;
   padding: 9px 15px;
   border: 1px solid var(--border-strong);
   border-radius: 20px;
@@ -38,7 +37,7 @@
   color: var(--text-muted);
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
-.pill-option input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.pill-option input { position: absolute; opacity: 0; pointer-events: none; }
 .pill-option.is-checked { background: var(--accent); border-color: var(--accent); color: var(--slate-900); }
 .form-status {
   padding: 14px 18px;
@@ -50,12 +49,4 @@
 .form-status.is-success { background: rgba(111,169,140,0.12); color: var(--success); border: 1px solid rgba(111,169,140,0.3); }
 .form-status.is-error { background: rgba(201,113,100,0.12); color: var(--error); border: 1px solid rgba(201,113,100,0.3); }
 @media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; gap: 44px; } }
-@media (max-width: 640px) {
-  .contact-grid { gap: 36px; }
-  .contact-info-item { align-items: flex-start; }
-  .contact-info-item .value { overflow-wrap: anywhere; }
-  .form-row { grid-template-columns: 1fr; gap: 16px; }
-  .contact-form { gap: 18px; }
-  .pill-option { padding: 9px 13px; }
-  .contact-form > .btn { width: 100%; justify-content: center !important; }
-}
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }

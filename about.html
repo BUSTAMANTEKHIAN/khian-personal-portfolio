@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/polish.css">
 </head>
 <body>
 
@@ -119,6 +120,17 @@
     </div>
   </div>
 </section>
+<section class="section credentials-section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Credentials</span><h2 class="section-title">Certifications &amp; credentials</h2><p class="section-sub">Networking, cybersecurity, and mechatronics training.</p></div>
+    <div class="credential-grid">
+      <article class="credential-card reveal"><span class="credential-index">01 / NETWORKING</span><h3>Cisco Networking Academy (NetAcad)</h3><p>Networking and Cybersecurity</p><span class="credential-meta">Certificate document to be added</span><button class="btn btn-secondary btn-small" type="button" data-certificate-open data-title="Cisco Networking Academy — Networking and Cybersecurity" data-file="assets/certificates/netacad-networking-cybersecurity.pdf">View Certificate</button></article>
+      <article class="credential-card reveal"><span class="credential-index">02 / MECHATRONICS</span><h3>NC II / NC2</h3><p>Mechatronics</p><span class="credential-meta">Certificate document to be added</span><button class="btn btn-secondary btn-small" type="button" data-certificate-open data-title="NC II — Mechatronics" data-file="assets/certificates/nc2-mechatronics.pdf">View Certificate</button></article>
+    </div>
+    <p class="credential-note">Add the original PDF files in <code>assets/certificates/</code> using the filenames shown above.</p>
+  </div>
+</section>
+<dialog class="certificate-dialog" data-certificate-dialog aria-labelledby="certificate-dialog-title"><div class="certificate-dialog-head"><h2 id="certificate-dialog-title" data-certificate-title>Certificate</h2><button class="certificate-close" type="button" data-certificate-close aria-label="Close certificate viewer">×</button></div><iframe title="Certificate preview" src="about:blank"></iframe><p class="certificate-help">If the preview is unavailable, add the certificate PDF to <code>assets/certificates/</code>.</p></dialog>
 </main>
 
 <footer class="site-footer">

@@ -57,10 +57,3 @@
   object-fit: cover;
   display: block;
 }
-
-@media (max-width: 640px) {
-  .filter-bar { align-items: stretch; gap: 16px; margin-bottom: 28px; }
-  .filter-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
-  .filter-tab { flex: 0 0 auto; min-height: 40px; }
-  .search-box { min-width: 0; width: 100%; }
-}

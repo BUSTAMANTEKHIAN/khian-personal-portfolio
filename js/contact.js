@@ -1,8 +1,6 @@
 /* =========================================================
    contact.html — form validation
-   NOTE: This form does not send email on its own — there is
-   no backend wired up. Hook it up to Formspree, EmailJS, or a
-   custom backend endpoint (see README) before relying on it.
+   The form posts to the Formspree endpoint configured in contact.html.
    ========================================================= */
 
 function isValidEmail(value) {

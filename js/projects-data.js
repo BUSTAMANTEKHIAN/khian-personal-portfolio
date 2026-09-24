@@ -54,7 +54,7 @@ const projects = [
       "Patterns for managing client-side state by hand that a framework would normally handle"
     ],
 
-    github: "#",
+    github: "",
     live: "https://ykb-ecommerce.onrender.com"
   },
 
@@ -71,7 +71,7 @@ const projects = [
     longDescription:
       "A multi-page vanilla HTML, CSS, and JavaScript site built to showcase the Digital Builders development team — their members, process, and shared work — as a group project for a web development class.",
 
-    image: null,
+    image: "",
 
     technologies: [
       "HTML",
@@ -102,7 +102,33 @@ const projects = [
       "Working with version control on a shared frontend codebase"
     ],
 
-    github: "#",
-    live: "#"
+    github: "",
+    live: ""
+  },
+
+  {
+    id: 3,
+    slug: "yankiii-barber-co",
+    title: "Yankiii Barber Co.",
+    category: "Websites",
+    description: "A barber shop website that brings service browsing and appointment booking into one customer flow.",
+    longDescription: "Yankiii Barber Co. is a barber shop website for exploring grooming services and starting an appointment. Its public pages introduce the shop and barbers, while the booking page guides a customer through service, barber, date, and time selections and summarizes the appointment details.",
+    image: "assets/project/YANKIII_BARBER.png",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    problem: "A service list gives customers prices and options, but it does not organize the choices needed for an appointment. The booking interface brings service, barber, schedule, duration, and price into a single review summary. The deployed booking page requires a customer to sign in before continuing.",
+    solution: "The public site pairs service and barber pages with a multi-step booking interface. The deployed frontend uses HTML, CSS, JavaScript interaction scripts, and a client-side API module. The booking summary keeps the selected service, barber, date, time, duration, and total together. The public deployment does not expose enough implementation detail to verify its server framework or database, so those technologies are left unspecified.",
+    features: [
+      "Service previews for Classic Haircut (₱250, 30 minutes), Signature Fade (₱350, 45 minutes), and Hair & Beard (₱450, 60 minutes)",
+      "Multi-step booking interface for service, barber, date, and time selection",
+      "Booking summary for service, duration, barber, date, time, and total price",
+      "Sign-in requirement before continuing with a booking",
+      "Pay-at-shop information for cash or e-wallet after the appointment"
+    ],
+    developmentDetails: "The deployed pages load client-side scripts including api.js and home-barbers.js. When reviewed, the services and barbers sections remained in their loading states, and the booking page showed a sign-in-required notice. The backend, database, and end-to-end appointment confirmation could not be verified from the available source.",
+    liveEmbed: false,
+    challenges: [],
+    learned: [],
+    github: "",
+    live: "https://yankiii-barber-co.vercel.app/"
   }
 ];

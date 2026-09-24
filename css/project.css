@@ -13,54 +13,6 @@
   color: var(--text-muted);
   margin: 40px 0 0;
 }
-.project-live-embed {
-  margin: 40px 0 0;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 30px 60px -24px var(--shadow);
-}
-.live-embed-bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface-2);
-}
-.live-embed-url {
-  flex: 1;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-muted);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.live-embed-open {
-  font-size: 12.5px;
-  color: var(--accent);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.live-embed-open:hover { color: var(--accent-strong); }
-.live-embed-frame {
-  width: 100%;
-  aspect-ratio: 21/9;
-  border: none;
-  display: block;
-  background: var(--surface-2);
-}
-@media (max-width: 640px) {
-  .live-embed-frame { aspect-ratio: 4/5; }
-  .live-embed-url { display: none; }
-}
-
 .case-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 64px; }
 .case-sidebar { position: sticky; top: 110px; align-self: start; }
 .sidebar-block { padding: 22px 0; border-top: 1px solid var(--border); }
@@ -91,20 +43,4 @@
   .case-grid { grid-template-columns: 1fr; gap: 36px; }
   .case-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 24px; }
   .sidebar-block { border-top: none; padding: 0; flex: 1; min-width: 200px; }
-}
-
-@media (max-width: 640px) {
-  .project-cover { aspect-ratio: 16 / 10; margin-top: 28px; font-size: 18px; }
-  .project-live-embed { margin-top: 28px; border-radius: var(--radius-md); }
-  .live-embed-bar { padding: 12px 14px; gap: 10px; }
-  .live-embed-open { font-size: 12px; }
-  .case-grid { gap: 30px; }
-  .case-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 16px; }
-  .sidebar-block { min-width: 0; }
-  .sidebar-links .btn { justify-content: center; }
-  .case-section { padding: 30px 0; }
-  .case-section h2 { font-size: 22px; }
-  .case-section p { font-size: 15px; }
-  .project-nav-row { display: grid; grid-template-columns: 1fr; gap: 14px; padding-top: 30px; }
-  .project-nav-row a:nth-child(2) { order: -1; color: var(--accent); }
 }

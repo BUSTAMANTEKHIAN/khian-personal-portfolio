@@ -13,7 +13,7 @@ A multi-page personal developer portfolio built with vanilla HTML, CSS, and Java
 - FAQ accordion, scroll-reveal animations (`IntersectionObserver`), back-to-top button
 - Contact form with client-side validation (required fields, email format, minimum message length)
 - Respects `prefers-reduced-motion` and `prefers-color-scheme`
-- Basic SEO: titles, meta descriptions, Open Graph tags, canonical URLs, inline SVG favicon
+- Basic SEO: titles, meta descriptions, Open Graph tags, and inline SVG favicon
 
 ## Project structure
 
@@ -27,6 +27,7 @@ portfolio/
 ├── contact.html
 ├── css/
 │   ├── styles.css       (tokens, reset, shared components)
+│   ├── polish.css       (shared visual refinements)
 │   ├── responsive.css
 │   ├── about.css
 │   ├── services.css
@@ -44,23 +45,30 @@ portfolio/
     └── icons/
 ```
 
+### Certificates
+Add the original certificate PDFs to `assets/certificates/` with these filenames so the About page viewer can preview them:
+- `netacad-networking-cybersecurity.pdf`
+- `nc2-mechatronics.pdf`
+
+The page intentionally does not include certificate dates, verification links, or identifiers until those details and documents are provided.
+
 ## Running it
 
-No build step or server required — this is a static site. Open `index.html` directly in a browser, or serve the folder locally:
+No build step or package installation is needed. To serve it locally:
 
-```bash
-npx serve portfolio
-cd "C:\Users\sajoy\OneDrive\Desktop\khian_portfolio\portfolio"
+```powershell
+cd "C:\Users\sajoy\OneDrive\Desktop\khian_portfolio\khian-personal-portfolio\khian_portfolio\portfolio"
 npm start
 ```
+
+Then visit `http://127.0.0.1:3000`. The included `server.js` uses only Node.js built-in modules.
 
 ## Customizing
 
 ### Change your info
 Search for these and replace with your own details:
 - Name/brand: `Khian Bustamante` (navbar, footer, page titles)
-- Email: `khianbustamante1@gmail.com`
-- Social links: `https://github.com`, `https://linkedin.com` (in `index.html`, `contact.html`, and the shared nav/footer markup repeated on every page)
+- Email and social links are listed on the Contact page and repeated in the homepage/footer markup.
 - Bio copy in the hero section of `index.html` and the About page
 
 ### Add a project
@@ -72,7 +80,7 @@ Add a new object to the `projects` array in `js/projects-data.js`:
   slug: "your-project",
   title: "Project Name",
   category: "Websites", // must match an existing category to appear under that filter, or introduces a new one automatically
-  year: "2026",
+  year: "", // omit when unknown
   description: "Short one-line summary.",
   longDescription: "A few sentences for the case study overview.",
   image: "assets/images/project-4.jpg",
@@ -82,8 +90,8 @@ Add a new object to the `projects` array in `js/projects-data.js`:
   solution: "How you solved it.",
   challenges: ["Challenge one"],
   learned: ["What you learned"],
-  github: "#",
-  live: "#"
+  github: "", // leave empty when no public repository exists
+  live: "" // leave empty when no deployed site exists
 }
 ```
 
@@ -93,10 +101,10 @@ That's it — it will automatically appear on the homepage (if in the first thre
 All colors are CSS custom properties at the top of `css/styles.css` under `:root` (dark theme) and `[data-theme="light"]` (light theme). Change the values there to restyle the whole site.
 
 ### Add real project images
-Replace the placeholder thumbnail (`.thumb-fill`, a styled text block) with an `<img>` tag once you have real screenshots, and drop images into `assets/images/`.
+Add a real screenshot under `assets/images/` or `assets/project/`, then set the matching `image` path in `js/projects-data.js`. Projects without screenshots use a labeled placeholder.
 
 ### Contact form
-The contact form posts to the configured Formspree endpoint through `js/contact.js`. It validates required fields, email format, and message length before sending. If you change providers, update both the form `action` in `contact.html` and the submission logic as needed; keep credentials and API keys server-side.
+The form validates on the client and submits to the Formspree endpoint in `contact.html`. Change that endpoint if the form is moved to a different Formspree account.
 
 ## Deployment
 

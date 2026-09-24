@@ -13,22 +13,20 @@ function getCategories() {
 
 function projectCardHTML(p) {
   return `
-      <div class="project-card reveal is-visible">
-      <div class="project-thumb">
-        ${p.image ? `<img src="${p.image}" alt="${p.title} preview" loading="lazy" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">` : ""}
-        <div class="thumb-fill"${p.image ? " hidden" : ""}>${p.title}</div>
-      </div>
+    <article class="project-card reveal is-visible">
+      <a class="project-thumb project-thumb-link" href="project.html?id=${p.id}" aria-label="View ${p.title} case study">${p.image ? `<img src="${p.image}" alt="${p.title} preview" loading="lazy">` : `<div class="project-placeholder"><span>${p.title}</span><small>Project preview not provided</small></div>`}</a>
       <div class="project-body">
         <span class="project-cat">${p.category}</span>
-        <h3>${p.title}</h3>
+        <h3><a href="project.html?id=${p.id}">${p.title}</a></h3>
         <p>${p.description}</p>
-        <div class="project-tags">${p.technologies.slice(0, 3).map((t) => `<span>${t}</span>`).join("")}</div>
+        ${p.technologies?.length ? `<div class="project-tags">${p.technologies.slice(0, 3).map((t) => `<span>${t}</span>`).join("")}</div>` : ""}
         <div class="project-links">
-          <a href="project.html?id=${p.id}">View project →</a>
-          ${p.live && p.live !== "#" ? `<a href="${p.live}" target="_blank" rel="noopener">Live site</a>` : ""}
+          <a class="btn btn-secondary btn-small" href="project.html?id=${p.id}">View Project ↗</a>
+          ${p.live && p.live !== "#" ? `<a href="${p.live}" target="_blank" rel="noopener noreferrer">Live site</a>` : ""}
+          ${p.github && p.github !== "#" ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer">GitHub</a>` : ""}
         </div>
       </div>
-    </div>
+    </article>
   `;
 }
 
