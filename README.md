@@ -59,6 +59,10 @@ No build step or package installation is needed. To serve it locally:
 ```powershell
 cd "C:\Users\sajoy\OneDrive\Desktop\khian_portfolio\khian-personal-portfolio\khian_portfolio\portfolio"
 npm start
+
+git add .
+git commit -m "Update portfolio"
+git push
 ```
 
 Then visit `http://127.0.0.1:3000`. The included `server.js` uses only Node.js built-in modules.
