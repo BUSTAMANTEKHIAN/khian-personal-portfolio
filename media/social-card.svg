@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Khian Bustamante — Web Developer</title>
+  <desc id="desc">Portfolio of Khian Bustamante, Web Developer and Computer Engineering Technology Student.</desc>
+  <rect width="1200" height="630" fill="#10191d"/>
+  <path d="M0 500 1200 100v530H0z" fill="#172328"/>
+  <circle cx="1020" cy="95" r="210" fill="#d7b783" opacity=".12"/>
+  <rect x="86" y="90" width="8" height="450" rx="4" fill="#d7b783"/>
+  <text x="130" y="195" fill="#d7b783" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="5">KHIAN BUSTAMANTE</text>
+  <text x="130" y="315" fill="#eef2ef" font-family="Arial,sans-serif" font-size="65" font-weight="700">Web Developer</text>
+  <text x="130" y="380" fill="#eef2ef" font-family="Arial,sans-serif" font-size="36">&amp; Computer Engineering Technology Student</text>
+  <text x="130" y="465" fill="#aebbb7" font-family="Arial,sans-serif" font-size="25">Responsive websites · E-commerce · Web applications</text>
+  <text x="130" y="555" fill="#d7b783" font-family="monospace" font-size="18">HTML · CSS · JavaScript · Node.js · Express · MySQL</text>
+</svg>

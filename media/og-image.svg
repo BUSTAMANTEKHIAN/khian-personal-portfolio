@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+  <title id="title">Khian Bustamante, student developer</title>
+  <rect width="1200" height="630" fill="#F4F1EA"/>
+  <rect x="0" y="0" width="12" height="630" fill="#E2432A"/>
+  <text x="72" y="120" fill="#E2432A" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">OPEN TO WORK</text>
+  <text x="72" y="280" fill="#161513" font-family="Georgia, serif" font-size="92" font-weight="700">Khian Bustamante</text>
+  <text x="72" y="360" fill="#161513" font-family="Georgia, serif" font-size="36">Student developer who ships full-stack projects.</text>
+  <text x="72" y="520" fill="#161513" font-family="ui-monospace, monospace" font-size="22">HTML  CSS  JS  Node  Express  MySQL</text>
+  <text x="72" y="560" fill="#E2432A" font-family="ui-monospace, monospace" font-size="18">khian-personal-portfolio.pages.dev</text>
+</svg>

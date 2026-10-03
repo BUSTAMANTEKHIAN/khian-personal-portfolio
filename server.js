@@ -9,6 +9,8 @@ const contentTypes = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".png": "image/png",
@@ -16,6 +18,18 @@ const contentTypes = {
   ".svg": "image/svg+xml",
   ".webp": "image/webp"
 };
+const csp = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://formspree.io; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://formspree.io; upgrade-insecure-requests";
+
+function sendFile(request, response, filePath, content, status = 200) {
+  response.writeHead(status, {
+    "Content-Type": contentTypes[path.extname(filePath).toLowerCase()] || "application/octet-stream",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Content-Security-Policy": csp
+  });
+  response.end(request.method === "HEAD" ? undefined : content);
+}
 
 const server = http.createServer((request, response) => {
   if (request.method !== "GET" && request.method !== "HEAD") {
@@ -34,27 +48,37 @@ const server = http.createServer((request, response) => {
   }
 
   const requestedPath = path.resolve(root, `.${pathname}`);
-  if (requestedPath !== root && !requestedPath.startsWith(`${root}${path.sep}`)) {
+  const relativePath = path.relative(root, requestedPath);
+  if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
     response.writeHead(403);
     response.end("Forbidden");
     return;
   }
 
-  const filePath = path.join(requestedPath, "index.html");
   fs.stat(requestedPath, (statError, stats) => {
-    const target = !statError && stats.isDirectory() ? filePath : requestedPath;
+    const target = !statError && stats.isDirectory()
+      ? path.join(requestedPath, "index.html")
+      : requestedPath;
+
     fs.readFile(target, (error, content) => {
-      if (error) {
-        response.writeHead(error.code === "ENOENT" ? 404 : 500, { "Content-Type": "text/plain; charset=utf-8" });
-        response.end(error.code === "ENOENT" ? "Not found" : "Server error");
+      if (!error) {
+        sendFile(request, response, target, content);
         return;
       }
-
-      response.writeHead(200, {
-        "Content-Type": contentTypes[path.extname(target).toLowerCase()] || "application/octet-stream",
-        "X-Content-Type-Options": "nosniff"
+      if (error.code !== "ENOENT") {
+        response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+        response.end("Server error");
+        return;
+      }
+      const notFoundPage = path.join(root, "404.html");
+      fs.readFile(notFoundPage, (fallbackError, fallbackContent) => {
+        if (fallbackError) {
+          response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+          response.end("Not found");
+          return;
+        }
+        sendFile(request, response, notFoundPage, fallbackContent, 404);
       });
-      response.end(request.method === "HEAD" ? undefined : content);
     });
   });
 });

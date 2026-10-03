@@ -1,130 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Khian Bustamante</title>
-<meta name="description" content="Browse and filter projects built by Khian Bustamante, including YKB Clothing and the Digital Builders team portfolio.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Projects — Khian Bustamante">
-<meta property="og:description" content="Everything I've shipped, in one place.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232C3E50%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22%23C9A66B%22 text-anchor=%22middle%22>K</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/projects.css">
-<link rel="stylesheet" href="css/polish.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Work | Khian Bustamante</title>
+  <meta name="description" content="Projects by Khian Bustamante, including YKB Clothing and Yankiii Barber Co.">
+  <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/projects.html">
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Work | Khian Bustamante">
+  <meta property="og:description" content="Full-stack and frontend projects, with case studies.">
+  <meta property="og:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
+  <meta property="og:url" content="https://khian-personal-portfolio.pages.dev/projects.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
+  <meta name="theme-color" content="#F4F1EA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="loader" data-loader><div class="loader-mark">K</div></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" data-progress aria-hidden="true"></div>
+  <div class="cursor-label" data-cursor-label>View -&gt;</div>
 
-<header class="navbar">
-  <div class="wrap">
-    <a href="index.html" class="brand"><span class="brand-mark">K</span> Khian Bustamante</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg>
-      </button>
-      <a href="contact.html" class="btn btn-secondary btn-small">Let's talk</a>
-      <button class="hamburger" data-hamburger aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-menu" data-mobile-menu>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-primary">Let's talk</a>
-</div>
-
-
-<main>
-<section class="page-hero">
-  <div class="wrap reveal">
-    <span class="eyebrow">Projects</span>
-    <h1>Everything I've shipped, in one place.</h1>
-    <p>Filter by category or search by name, technology, or description.</p>
-  </div>
-</section>
-
-<section class="section" style="padding-top: 20px;">
-  <div class="wrap">
-    <div class="filter-bar reveal">
-      <div class="filter-tabs" id="filter-tabs"></div>
-      <div class="search-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input type="text" id="project-search" placeholder="Search projects..." aria-label="Search projects">
-      </div>
-    </div>
-    <p class="results-count reveal" id="results-count"></p>
-    <div class="projects-grid" id="projects-grid"></div>
-  </div>
-</section>
-
-<section class="section-tight">
-  <div class="wrap reveal">
-    <div class="cta-band">
-      <h2>Have a project in mind?</h2>
-      <p>Tell me what you're building and let's discuss how I can help.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Start a conversation</a>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="brand"><span class="brand-mark">K</span> Khian Bustamante</a>
-        <p class="footer-desc">Building modern digital experiences with code and a lot of testing.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Site</h5>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Khian <span>B.</span></a>
+      <nav class="nav-desktop" aria-label="Primary">
         <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Work</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h5>Elsewhere</h5>
-        <a href="https://github.com/khianbustamante" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/khianbustamante" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:khianbustamante1@gmail.com">Email</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Khian Bustamante. All rights reserved.</span>
-      <span>Designed & built with HTML, CSS & JavaScript.</span>
+  </header>
+  <div class="menu-backdrop" data-menu-backdrop></div>
+  <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="projects.html" aria-current="page">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main">
+    <section class="page-intro wrap">
+      <p class="kicker">Work</p>
+      <h1>Two shipped projects, with notes on how they were built.</h1>
+      <p class="lede">Cards live in the HTML. Filters only hide or show them.</p>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="filters" data-filters role="group" aria-label="Filter projects">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+          <button type="button" data-filter="frontend" aria-pressed="false">Frontend</button>
+        </div>
+
+        <div class="work-list">
+          <article class="work-card reveal" data-project data-category="fullstack" data-reveal data-cursor-view>
+            <a class="work-media" href="projects/ykb-clothing.html">
+              <img src="media/project/ykb-01.webp" alt="YKB Clothing storefront homepage" width="1672" height="941" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div class="work-top"><span>01</span><span>Full-stack</span></div>
+              <h2><a href="projects/ykb-clothing.html">YKB Clothing</a></h2>
+              <p>Full-stack clothing store: catalog, cart, checkout. HTML, CSS, JavaScript, Node.js, Express, MySQL.</p>
+              <p><a href="https://ykb-ecommerce.onrender.com" rel="noopener noreferrer">Live site</a></p>
+            </div>
+          </article>
+
+          <article class="work-card is-flip reveal" data-project data-category="frontend" data-reveal data-cursor-view>
+            <a class="work-media" href="projects/yankiii-barber.html">
+              <img src="media/project/yankiii-01.webp" alt="Yankiii Barber Co. website homepage" width="1882" height="889" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div class="work-top"><span>02</span><span>Frontend</span></div>
+              <h2><a href="projects/yankiii-barber.html">Yankiii Barber Co.</a></h2>
+              <p>Barber shop website for services and appointment booking.</p>
+              <p><a href="https://yankiii-barber-co.vercel.app/" rel="noopener noreferrer">Live site</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Khian Bustamante</span>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/BUSTAMANTEKHIAN" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/khianbustamante" rel="noopener noreferrer">LinkedIn</a>
     </div>
-  </div>
-</footer>
-
-<button class="back-to-top" data-back-to-top aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
-
-
-<script src="js/projects-data.js"></script>
-<script src="js/script.js"></script>
-<script src="js/projects.js"></script>
+  </footer>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

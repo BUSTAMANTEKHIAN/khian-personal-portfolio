@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://khian-personal-portfolio.pages.dev/sitemap.xml
