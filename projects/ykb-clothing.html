@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>YKB Clothing | Khian Bustamante</title>
-  <meta name="description" content="Case study: YKB Clothing, a full-stack e-commerce store with catalog, cart, and checkout.">
+  <meta name="description" content="Case study: YKB Clothing, a full-stack clothing e-commerce platform with authentication, cart, checkout, orders, wishlist, reviews, and admin management.">
   <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/projects/ykb-clothing.html">
   <link rel="icon" href="../media/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:title" content="YKB Clothing | Khian Bustamante">
-  <meta property="og:description" content="Full-stack clothing store: catalog, cart, checkout.">
+  <meta property="og:description" content="A full-stack clothing e-commerce platform with authentication, catalog, cart, checkout, and admin management.">
   <meta property="og:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
   <meta property="og:url" content="https://khian-personal-portfolio.pages.dev/projects/ykb-clothing.html">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YKB Clothing | Khian Bustamante">
+  <meta name="twitter:description" content="A full-stack clothing e-commerce platform with authentication, catalog, cart, checkout, and admin management.">
   <meta name="twitter:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
   <meta name="theme-color" content="#F4F1EA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +22,23 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YKB Clothing",
+    "applicationCategory": "ShoppingApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "description": "A full-stack clothing e-commerce platform with authentication, product management, cart, checkout, orders, wishlist, reviews, and administrative management.",
+    "author": {
+      "@type": "Person",
+      "name": "Khian Bustamante",
+      "url": "https://khian-personal-portfolio.pages.dev/"
+    },
+    "url": "https://ykb-ecommerce.onrender.com"
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,9 +75,9 @@
   <main id="main">
     <section class="page-intro">
       <div class="grid">
-        <p class="kicker span-12">02 / Full-Stack E-Commerce</p>
+        <p class="kicker span-12">01 / Full-Stack E-Commerce</p>
         <h1 class="span-8">YKB Clothing</h1>
-        <p class="lede span-7">A clothing store with a product catalog, cart, and checkout, built end to end without a frontend framework.</p>
+        <p class="lede span-7">A full-stack clothing e-commerce platform with authentication, product management, cart, checkout, orders, wishlist, reviews, and administrative management.</p>
       </div>
     </section>
 
@@ -67,58 +86,102 @@
         <article class="case-main prose">
           <div class="shot-grid reveal" data-reveal>
             <figure>
-              <img src="../media/project/ykb-01.webp" alt="YKB Clothing homepage" width="1672" height="941">
-              <figcaption>01 Homepage</figcaption>
+              <img src="../media/project/ykb-01.webp" alt="YKB Clothing storefront homepage and featured apparel collections" width="1672" height="941" loading="eager">
+              <figcaption>01 — Homepage: Storefront landing page featuring apparel highlights and brand navigation.</figcaption>
             </figure>
-<figure>
-  <img src="../media/project/ykb/ykb-shop.png" alt="YKB Clothing product shop" loading="lazy">
-  <figcaption>02 — Product Shop</figcaption>
-</figure>
-<figure>
-  <img src="../media/project/ykb/ykb-product.png" alt="YKB Clothing product detail page" loading="lazy">
-  <figcaption>03 — Product Detail</figcaption>
-</figure>
-<figure>
-  <img src="../media/project/ykb/ykb-cart.png" alt="YKB Clothing shopping cart" loading="lazy">
-  <figcaption>04 — Shopping Cart</figcaption>
-</figure>
-<figure>
-  <img src="../media/project/ykb/ykb-admin.png" alt="YKB Clothing admin dashboard" loading="lazy">
-  <figcaption>05 — Admin Dashboard</figcaption>
-</figure>
+            <figure>
+              <img src="../media/project/ykb/ykb-shop.png" alt="YKB Clothing product catalog shop page" width="1916" height="877" loading="lazy">
+              <figcaption>02 — Product Shop: Filterable catalog displaying available apparel items with pricing and categories.</figcaption>
+            </figure>
+            <figure>
+              <img src="../media/project/ykb/ykb-product.png" alt="YKB Clothing product detail page with size selection and reviews" width="1916" height="868" loading="lazy">
+              <figcaption>03 — Product Detail: Detailed view with product images, sizing options, customer reviews, and cart actions.</figcaption>
+            </figure>
+            <figure>
+              <img src="../media/project/ykb/ykb-cart.png" alt="YKB Clothing shopping cart drawer and order summary" width="1889" height="869" loading="lazy">
+              <figcaption>04 — Shopping Cart: Real-time cart state with item quantities, price calculations, and checkout progression.</figcaption>
+            </figure>
+            <figure>
+              <img src="../media/project/ykb/ykb-admin.png" alt="YKB Clothing administrative management dashboard" width="1901" height="876" loading="lazy">
+              <figcaption>05 — Admin Dashboard: Central management panel for products, inventory, order processing, and reviews.</figcaption>
+            </figure>
           </div>
 
           <h2>Problem</h2>
-          <p>Most starter e-commerce demos stop at a static product grid. I wanted a store that tracks cart state and talks to a real backend and database, the way a shop would need to.</p>
+          <p>Most starter e-commerce demos stop at a static product grid. YKB Clothing was engineered as a complete full-stack shopping platform with persistent user sessions, realistic catalog filtering, dynamic cart calculations, checkout processing, user reviews, and an administrative panel for catalog management.</p>
 
           <h2>My role</h2>
-          <p>I built the project end to end: storefront, Node/Express API, and MySQL schema.</p>
+          <p>I built the project end to end: storefront interface, client-side state handling, Node.js and Express backend API, MySQL database schema, JWT authentication, and administrative tooling.</p>
+
+          <h2>Key features</h2>
+          <div class="features-grid">
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>User authentication</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Product catalog</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Shopping cart</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Checkout</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Order management</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Wishlist</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Product reviews</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Admin dashboard</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>MySQL database</span></div>
+          </div>
 
           <h2>Stack</h2>
-          <p>HTML, CSS, JavaScript, Node.js, Express.js, MySQL.</p>
+          <p>HTML, CSS, JavaScript, Node.js, Express.js, MySQL, JWT, bcrypt, Multer, Cloudinary, CORS, and Nodemailer. Deployed on Render.</p>
+
+          <h2>Architecture &amp; Technical Breakdown</h2>
+          <div class="arch-grid">
+            <div class="arch-card">
+              <span class="arch-label">Frontend</span>
+              <span class="arch-value">HTML / CSS / JavaScript</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Backend</span>
+              <span class="arch-value">Node.js / Express.js</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Database</span>
+              <span class="arch-value">MySQL</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Authentication</span>
+              <span class="arch-value">JWT / bcrypt</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Media</span>
+              <span class="arch-value">Multer / Cloudinary</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Deployment</span>
+              <span class="arch-value">Render</span>
+            </div>
+          </div>
 
           <h2>A hard problem</h2>
-          <p>Keeping cart state in sync between the client and the server without a frontend framework. I kept UI rendering separate from API calls, and used REST endpoints for products, cart, and orders on a MySQL schema for catalog and order data.</p>
+          <p>Keeping cart state in sync between the client and the server without a frontend framework. I kept UI rendering separate from API calls, and used REST endpoints for products, cart, wishlist, and orders on a normalized MySQL schema for catalog and order data.</p>
 
           <h2>What I would do differently</h2>
+          <p>I would continue improving the project for production use by adding deeper automated testing, expanding third-party payment gateway integrations, improving order management analytics, and strengthening automated monitoring and deployment workflows.</p>
+
           <p>
-            I would continue improving the project for production use by adding deeper
-            automated testing, expanding payment integrations, improving order
-            management, and strengthening monitoring and deployment practices.
+            <a class="btn btn-primary" href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
           </p>
-          <p>
-            <a class="btn btn-primary" href="https://ykb-ecommerce.onrender.com" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
-          </p>
+
+          <p class="muted">Built as a complete full-stack e-commerce application from UI to database.</p>
         </article>
 
         <aside class="case-aside">
           <dl>
             <dt>Live</dt>
-            <dd><a href="https://ykb-ecommerce.onrender.com" rel="noopener noreferrer">ykb-ecommerce.onrender.com</a></dd>
-            <dt>Repo</dt>
-            <dd>Full-stack e-commerce application</dd>
+            <dd><a href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">ykb-ecommerce.onrender.com</a></dd>
             <dt>Type</dt>
             <dd>Full-stack e-commerce</dd>
+            <dt>Backend</dt>
+            <dd>Node.js / Express.js</dd>
+            <dt>Database</dt>
+            <dd>MySQL</dd>
+            <dt>Deployment</dt>
+            <dd>Render</dd>
           </dl>
         </aside>
       </div>
@@ -129,6 +192,8 @@
     <div class="footer-inner">
       <span>&copy; 2026 Khian Bustamante</span>
       <a href="../privacy.html">Privacy</a>
+      <a href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/khianbustamante" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </footer>
   <script src="../js/main.js" defer></script>

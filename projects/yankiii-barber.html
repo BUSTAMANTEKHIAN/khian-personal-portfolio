@@ -3,95 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
   <title>Yankiii Barber Co. | Khian Bustamante</title>
-
-  <meta name="description" content="Case study: Yankiii Barber Co., a full-stack barbershop appointment and booking platform.">
-
+  <meta name="description" content="Case study: Yankiii Barber Co., a full-stack barbershop booking platform with service browsing, barber selection, availability, and administrative management.">
   <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/projects/yankiii-barber.html">
   <link rel="icon" href="../media/favicon.svg" type="image/svg+xml">
-
   <meta property="og:type" content="website">
   <meta property="og:title" content="Yankiii Barber Co. | Khian Bustamante">
-  <meta property="og:description" content="Full-stack barbershop appointment and booking platform.">
+  <meta property="og:description" content="A full-stack barbershop booking platform with customer booking workflows and administrative management.">
   <meta property="og:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
   <meta property="og:url" content="https://khian-personal-portfolio.pages.dev/projects/yankiii-barber.html">
-
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yankiii Barber Co. | Khian Bustamante">
+  <meta name="twitter:description" content="A full-stack barbershop booking platform with customer booking workflows and administrative management.">
   <meta name="twitter:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
-
   <meta name="theme-color" content="#F4F1EA">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-
   <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Yankiii Barber Co.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "description": "A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.",
+    "author": {
+      "@type": "Person",
+      "name": "Khian Bustamante",
+      "url": "https://khian-personal-portfolio.pages.dev/"
+    },
+    "url": "https://yankiii-barber-co.vercel.app/"
+  }
+  </script>
 </head>
-
 <body>
-
   <a class="skip-link" href="#main">Skip to content</a>
-
   <div class="progress" data-progress aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="header-inner">
-
-      <a class="brand" href="../index.html">
-        Khian <span>B.</span>
-      </a>
-
+      <a class="brand" href="../index.html">Khian <span>B.</span></a>
       <nav class="nav-desktop" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="../projects.html" aria-current="page">Work</a>
         <a href="../about.html">About</a>
         <a href="../contact.html">Contact</a>
       </nav>
-
       <div class="header-actions">
-
-        <button
-          class="icon-btn"
-          type="button"
-          data-theme-toggle
-          aria-pressed="false"
-          aria-label="Switch to dark theme">
-
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>
-          </svg>
-
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <circle cx="12" cy="12" r="4.5"/>
-            <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/>
-          </svg>
-
+        <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg>
         </button>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          data-menu-toggle
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
         </button>
-
       </div>
     </div>
   </header>
-
   <div class="menu-backdrop" data-menu-backdrop></div>
-
   <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile" aria-hidden="true">
     <a href="../index.html">Home</a>
     <a href="../projects.html" aria-current="page">Work</a>
@@ -100,191 +73,139 @@
   </nav>
 
   <main id="main">
-
     <section class="page-intro">
       <div class="grid">
-
-        <p class="kicker span-12">
-          01 / Full-Stack Web Application
-        </p>
-
-        <h1 class="span-8">
-          Yankiii Barber Co.
-        </h1>
-
-        <p class="lede span-7">
-          A full-stack barbershop appointment platform for browsing services,
-          choosing a barber, checking availability, and managing bookings.
-        </p>
-
+        <p class="kicker span-12">02 / Full-Stack Web Application</p>
+        <h1 class="span-8">Yankiii Barber Co.</h1>
+        <p class="lede span-7">A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.</p>
       </div>
     </section>
 
     <section class="section" style="padding-top:0">
-
       <div class="wrap case-layout">
-
         <article class="case-main prose">
-
           <div class="shot-grid reveal" data-reveal>
-
             <figure>
-              <img
-                src="../media/project/yankiii-01.webp"
-                alt="Yankiii Barber Co. homepage"
-                width="1882"
-                height="889"
-                loading="eager">
-              <figcaption>01 — Homepage</figcaption>
+              <img src="../media/project/yankiii-01.webp" alt="Yankiii Barber Co. homepage hero and service highlights" width="1882" height="889" loading="eager">
+              <figcaption>01 — Homepage: Brand introduction, service highlights, and booking entry point.</figcaption>
             </figure>
 
             <figure>
-              <img
-                src="../media/project/yankiii/yankiii-booking.png"
-                alt="Yankiii Barber Co. appointment booking interface"
-                loading="lazy">
-              <figcaption>02 — Appointment Booking</figcaption>
+              <img src="../media/project/yankiii/yankiii-booking.png" alt="Yankiii Barber Co. appointment booking interface" width="1328" height="826" loading="lazy">
+              <figcaption>02 — Appointment Booking: Service selection, barber preference, schedule availability, and booking summary.</figcaption>
             </figure>
 
             <figure>
-              <img
-                src="../media/project/yankiii/yankiii-dashboard.png"
-                alt="Yankiii Barber Co. customer dashboard"
-                loading="lazy">
-              <figcaption>03 — Customer Dashboard</figcaption>
+              <img src="../media/project/yankiii/yankiii-dashboard.png" alt="Yankiii Barber Co. customer dashboard" width="1910" height="852" loading="lazy">
+              <figcaption>03 — Customer Dashboard: Customer account overview displaying appointment history and booking status.</figcaption>
             </figure>
 
             <figure>
-              <img
-                src="../media/project/yankiii/yankiii-admin.png"
-                alt="Yankiii Barber Co. admin dashboard"
-                loading="lazy">
-              <figcaption>04 — Admin Dashboard</figcaption>
+              <img src="../media/project/yankiii/yankiii-admin.png" alt="Yankiii Barber Co. admin dashboard" width="1895" height="873" loading="lazy">
+              <figcaption>04 — Admin Dashboard: Manage bookings, services, barbers, and operational barbershop data.</figcaption>
             </figure>
 
-            <figure>
-              <img
-                src="../media/project/yankiii/yankiii-mobile.png"
-                alt="Yankiii Barber Co. responsive mobile interface"
-                loading="lazy">
-              <figcaption>05 — Mobile Experience</figcaption>
+            <figure class="is-mobile">
+              <div class="mobile-wrap">
+                <img src="../media/project/yankiii/yankiii-mobile.png" alt="Yankiii Barber Co. responsive mobile interface" width="330" height="715" loading="lazy">
+              </div>
+              <figcaption>05 — Mobile Experience: Responsive mobile interface designed for on-the-go service browsing and bookings.</figcaption>
             </figure>
-
           </div>
 
           <h2>Problem</h2>
-
-          <p>
-            Booking a barbershop appointment can involve several decisions:
-            choosing a service, selecting a barber, finding an available
-            schedule, and confirming the appointment. Yankiii Barber Co.
-            brings these steps into one web application while also giving
-            staff an admin interface for managing the booking system.
-          </p>
+          <p>Booking a barbershop appointment involves multiple coordinated decisions: selecting a service, choosing a barber, checking real-time availability, and confirming the appointment schedule. Yankiii Barber Co. brings these steps into a unified full-stack application while providing an administrative management interface for barbershop staff to manage services, barbers, and bookings.</p>
 
           <h2>My role</h2>
+          <p>I designed and developed the project as a full-stack web application, implementing the customer-facing interface, booking workflow, customer authentication, backend REST API, database schema, and administrative dashboard.</p>
 
-          <p>
-            I designed and developed the project as a full-stack web
-            application, working across the customer-facing interface,
-            booking flow, authentication, backend API, database integration,
-            and admin functionality.
-          </p>
+          <h2>Key features</h2>
+          <div class="features-grid">
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Service browsing</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Barber selection</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Availability</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Appointment booking</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Customer authentication</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Customer dashboard</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Admin dashboard</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Booking management</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Responsive mobile UI</span></div>
+          </div>
 
           <h2>Stack</h2>
+          <p>HTML, CSS, JavaScript, Node.js, Express.js, MySQL, JWT, bcrypt, Nodemailer, Express Rate Limit, and CORS. The application is deployed on Vercel.</p>
 
-          <p>
-            HTML, CSS, JavaScript, Node.js, Express.js, MySQL, JWT,
-            bcryptjs, Nodemailer, and Express Rate Limit. The application
-            is deployed on Vercel.
-          </p>
+          <h2>Architecture &amp; Technical Breakdown</h2>
+          <div class="arch-grid">
+            <div class="arch-card">
+              <span class="arch-label">Frontend</span>
+              <span class="arch-value">HTML / CSS / JavaScript</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Backend</span>
+              <span class="arch-value">Node.js / Express.js</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Database</span>
+              <span class="arch-value">MySQL</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Authentication</span>
+              <span class="arch-value">JWT / bcrypt</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Email</span>
+              <span class="arch-value">Nodemailer</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Security / API</span>
+              <span class="arch-value">Express Rate Limit / CORS</span>
+            </div>
+            <div class="arch-card">
+              <span class="arch-label">Deployment</span>
+              <span class="arch-value">Vercel</span>
+            </div>
+          </div>
 
           <h2>A hard problem</h2>
-
-          <p>
-            One of the more challenging parts was coordinating the booking
-            flow across services, barbers, schedules, and customer
-            authentication. The backend separates these responsibilities
-            into controllers, routes, middleware, and booking utilities so
-            that availability and appointment handling can be managed
-            consistently.
-          </p>
+          <p>Coordinating appointment availability across individual barbers and business hours while preventing double-bookings. The backend enforces structured booking logic across controllers, routes, and middleware, ensuring that customer authentication, barber schedules, and appointment slots remain consistent and validated.</p>
 
           <h2>What I would do differently</h2>
+          <p>I would continue improving the system around production readiness, expanding automated end-to-end testing for peak booking concurrency, adding customer SMS notifications alongside email confirmations, and providing barbershop staff with richer operational reporting.</p>
 
           <p>
-            I would continue improving the system around production
-            readiness, particularly deeper automated testing, more detailed
-            booking management, and additional operational tools for
-            barbershop staff.
+            <a class="btn btn-primary" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
           </p>
 
-          <p>
-            <a
-              class="btn btn-primary"
-              href="https://yankiii-barber-co.vercel.app/"
-              rel="noopener noreferrer">
-
-              Live site
-              <span class="arrow" aria-hidden="true">-&gt;</span>
-
-            </a>
-          </p>
-
-          <p class="muted">
-            Built as a full-stack portfolio project from frontend to backend
-            and database integration.
-          </p>
-
+          <p class="muted">Built as a full-stack portfolio project from frontend to backend API and database integration.</p>
         </article>
 
         <aside class="case-aside">
-
           <dl>
-
             <dt>Live</dt>
-
-            <dd>
-              <a
-                href="https://yankiii-barber-co.vercel.app/"
-                rel="noopener noreferrer">
-                yankiii-barber-co.vercel.app
-              </a>
-            </dd>
-
+            <dd><a href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">yankiii-barber-co.vercel.app</a></dd>
             <dt>Type</dt>
-
-            <dd>
-              Full-stack web application
-            </dd>
-
+            <dd>Full-stack web application</dd>
+            <dt>Backend</dt>
+            <dd>Node.js / Express.js</dd>
+            <dt>Database</dt>
+            <dd>MySQL</dd>
+            <dt>Deployment</dt>
+            <dd>Vercel</dd>
           </dl>
-
         </aside>
-
       </div>
-
     </section>
-
   </main>
 
   <footer class="site-footer">
-
     <div class="footer-inner">
-
-      <span>
-        &copy; 2026 Khian Bustamante
-      </span>
-
-      <a href="../privacy.html">
-        Privacy
-      </a>
-
+      <span>&copy; 2026 Khian Bustamante</span>
+      <a href="../privacy.html">Privacy</a>
+      <a href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/khianbustamante" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
-
   </footer>
-
   <script src="../js/main.js" defer></script>
-
 </body>
 </html>

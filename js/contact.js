@@ -28,8 +28,8 @@ function validate(form) {
     ok = false;
   } else setError(email, "");
 
-  if (message.value.trim().length < 20) {
-    setError(message, "Please add a little more detail (at least 20 characters).");
+  if (message.value.trim().length < 10) {
+    setError(message, "Please provide a brief message (at least 10 characters).");
     ok = false;
   } else setError(message, "");
 

@@ -1,8 +1,7 @@
 /* =========================================================
    Centralized project data
-   Add a new project by adding an object to this array — every
-   page (home preview, projects grid, filters, detail view)
-   reads from this single source.
+   Khian Bustamante - Full-Stack Developer Portfolio
+   Only shipped full-stack portfolio projects.
    ========================================================= */
 
 const projects = [
@@ -10,16 +9,16 @@ const projects = [
     id: 1,
     slug: "ykb-clothing",
     title: "YKB Clothing",
-    category: "E-Commerce",
+    category: "Full-Stack E-Commerce",
     year: "2026",
 
     description:
-      "A full-stack clothing e-commerce site with a product catalog, cart, and checkout flow.",
+      "A full-stack clothing e-commerce platform with authentication, cart, checkout, orders, wishlist, reviews, and admin management.",
 
     longDescription:
-      "YKB Clothing is a full-stack online store built with vanilla JavaScript on the frontend and a Node.js/Express backend. The goal was to build a real, working e-commerce flow end to end — product browsing, cart state, and checkout — without leaning on a framework, so every interaction is handled with plain DOM logic and REST calls.",
+      "A full-stack clothing e-commerce platform with authentication, product management, cart, checkout, orders, wishlist, reviews, and administrative management.",
 
-    image: "assets/project/ykb_home.png",
+    image: "media/project/ykb-01.webp",
 
     technologies: [
       "HTML",
@@ -27,31 +26,50 @@ const projects = [
       "JavaScript",
       "Node.js",
       "Express.js",
-      "MySQL"
+      "MySQL",
+      "JWT",
+      "bcrypt",
+      "Multer",
+      "Cloudinary",
+      "CORS",
+      "Nodemailer"
     ],
 
     features: [
-      "Product catalog with category browsing",
-      "Persistent shopping cart",
-      "Checkout flow",
-      "Express REST API backing the storefront",
-      "MySQL-backed product and order data"
+      "User authentication",
+      "Product catalog",
+      "Shopping cart",
+      "Checkout",
+      "Order management",
+      "Wishlist",
+      "Product reviews",
+      "Admin dashboard",
+      "MySQL database"
     ],
 
+    architecture: {
+      frontend: "HTML / CSS / JavaScript",
+      backend: "Node.js / Express.js",
+      database: "MySQL",
+      authentication: "JWT / bcrypt",
+      media: "Multer / Cloudinary",
+      deployment: "Render"
+    },
+
     problem:
-      "Most starter e-commerce demos stop at a static product grid. The goal here was a store that actually tracks cart state and talks to a real backend and database, the way a client-facing shop would need to.",
+      "Most starter e-commerce demos stop at a static product grid. YKB Clothing was engineered as a complete full-stack shopping platform with persistent user sessions, realistic catalog filtering, dynamic cart calculations, checkout processing, user reviews, and an administrative panel for catalog management.",
 
     solution:
-      "Built the storefront in vanilla JS with a clear separation between UI rendering and API calls, and a Node/Express backend exposing REST endpoints for products, cart, and orders, backed by a MySQL schema for catalog and order data.",
+      "Built the storefront with vanilla JavaScript with a clean separation between UI rendering and API interactions, backed by a Node.js/Express REST backend, JWT authentication, and a normalized MySQL schema for catalog, user, and order data.",
 
     challenges: [
-      "Keeping cart state in sync between the client and the server without a frontend framework",
-      "Designing a MySQL schema that could support categories, variants, and orders cleanly"
+      "Keeping client-side cart and wishlist state synchronized with authenticated user records and database inventory without using a heavy frontend framework",
+      "Structuring relational MySQL schemas to support product variants, categories, customer reviews, and order line items cleanly"
     ],
 
     learned: [
-      "How to structure a REST API for a real storefront, not just a demo endpoint",
-      "Patterns for managing client-side state by hand that a framework would normally handle"
+      "How to architect production-ready REST APIs for e-commerce with proper error handling and token verification",
+      "Techniques for reliable state management and DOM updates using native browser APIs"
     ],
 
     github: "",
@@ -60,74 +78,71 @@ const projects = [
 
   {
     id: 2,
-    slug: "digital-builders-portfolio",
-    title: "Digital Builders Team Portfolio",
-    category: "Websites",
+    slug: "yankiii-barber-co",
+    title: "Yankiii Barber Co.",
+    category: "Full-Stack Web Application",
     year: "2026",
 
     description:
-      "A multi-page portfolio site built collaboratively for the Digital Builders dev team.",
+      "A full-stack barbershop booking platform with services, barber selection, availability, customer accounts, appointment booking, and administrative tools.",
 
     longDescription:
-      "A multi-page vanilla HTML, CSS, and JavaScript site built to showcase the Digital Builders development team — their members, process, and shared work — as a group project for a web development class.",
+      "A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.",
 
-    image: "",
+    image: "media/project/yankiii-01.webp",
 
     technologies: [
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "JWT",
+      "bcrypt",
+      "Nodemailer",
+      "Express Rate Limit",
+      "CORS"
     ],
 
     features: [
-      "Multiple linked pages sharing a consistent design system",
-      "Team member profiles",
-      "Responsive layout across breakpoints",
-      "Reusable CSS components across pages"
+      "Service browsing",
+      "Barber selection",
+      "Availability",
+      "Appointment booking",
+      "Customer authentication",
+      "Customer dashboard",
+      "Admin dashboard",
+      "Booking management",
+      "Responsive mobile UI"
     ],
 
+    architecture: {
+      frontend: "HTML / CSS / JavaScript",
+      backend: "Node.js / Express.js",
+      database: "MySQL",
+      authentication: "JWT / bcrypt",
+      email: "Nodemailer",
+      security: "Express Rate Limit / CORS",
+      deployment: "Vercel"
+    },
+
     problem:
-      "The team needed one site to represent everyone's work consistently, without every page being built and styled from scratch by a different person.",
+      "Booking a barbershop appointment involves multiple coordinated decisions: selecting a service, choosing a barber, checking real-time availability, and confirming the appointment schedule. Yankiii Barber Co. brings these steps into a unified full-stack application while providing an administrative management interface for barbershop staff to manage services, barbers, and bookings.",
 
     solution:
-      "Set up a shared CSS structure and page template so every team member's page followed the same visual language, then split up page ownership while keeping the design system centralized.",
+      "Engineered an end-to-end booking platform pairing responsive customer interfaces with a Node.js/Express backend and MySQL database. The system handles customer authentication, schedule validation, appointment creation, customer dashboards, and staff administrative tools.",
 
     challenges: [
-      "Coordinating a consistent design system across multiple contributors",
-      "Keeping navigation and layout consistent across every page"
+      "Coordinating appointment availability across individual barbers and business hours while preventing double-bookings",
+      "Separating business concerns into modular controllers, routes, and middleware for booking logic, authentication, and admin access"
     ],
 
     learned: [
-      "How to structure a multi-page vanilla site so it stays maintainable across contributors",
-      "Working with version control on a shared frontend codebase"
+      "How to model appointment scheduling logic and database relationships in MySQL",
+      "Implementing secure customer and administrative authentication with rate limiting and input validation"
     ],
 
-    github: "",
-    live: ""
-  },
-
-  {
-    id: 3,
-    slug: "yankiii-barber-co",
-    title: "Yankiii Barber Co.",
-    category: "Websites",
-    description: "A barber shop website that brings service browsing and appointment booking into one customer flow.",
-    longDescription: "Yankiii Barber Co. is a barber shop website for exploring grooming services and starting an appointment. Its public pages introduce the shop and barbers, while the booking page guides a customer through service, barber, date, and time selections and summarizes the appointment details.",
-    image: "assets/project/YANKIII_BARBER.png",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    problem: "A service list gives customers prices and options, but it does not organize the choices needed for an appointment. The booking interface brings service, barber, schedule, duration, and price into a single review summary. The deployed booking page requires a customer to sign in before continuing.",
-    solution: "The public site pairs service and barber pages with a multi-step booking interface. The deployed frontend uses HTML, CSS, JavaScript interaction scripts, and a client-side API module. The booking summary keeps the selected service, barber, date, time, duration, and total together. The public deployment does not expose enough implementation detail to verify its server framework or database, so those technologies are left unspecified.",
-    features: [
-      "Service previews for Classic Haircut (₱250, 30 minutes), Signature Fade (₱350, 45 minutes), and Hair & Beard (₱450, 60 minutes)",
-      "Multi-step booking interface for service, barber, date, and time selection",
-      "Booking summary for service, duration, barber, date, time, and total price",
-      "Sign-in requirement before continuing with a booking",
-      "Pay-at-shop information for cash or e-wallet after the appointment"
-    ],
-    developmentDetails: "The deployed pages load client-side scripts including api.js and home-barbers.js. When reviewed, the services and barbers sections remained in their loading states, and the booking page showed a sign-in-required notice. The backend, database, and end-to-end appointment confirmation could not be verified from the available source.",
-    liveEmbed: false,
-    challenges: [],
-    learned: [],
     github: "",
     live: "https://yankiii-barber-co.vercel.app/"
   }

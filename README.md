@@ -1,44 +1,33 @@
 # Khian Bustamante — Portfolio
 
-Responsive, multi-page portfolio built with vanilla HTML, CSS, and JavaScript. The active site is the repository root and deploys as a static site to Cloudflare Pages; there is no framework or build step.
+A polished, responsive developer portfolio showcasing full-stack web applications built with Node.js, Express, MySQL, and modern JavaScript. Deployed on Cloudflare Pages.
 
-## Pages and features
+## Shipped Projects
 
-- Home, About, Services, Projects, project case studies, Contact, Privacy, and a custom 404 page
-- Shared project data for the homepage cards, searchable/filterable project list, and `project.html?id=...` case studies
-- Yankiii Barber Co. is featured first and links to its public site. Its case study uses the real screenshot and describes only behavior visible on the public deployment.
-- Keyboard-operable navigation and FAQs, visible focus treatment, skip links, reduced-motion support, responsive layouts, and light/dark themes
-- Client-side contact validation; messages are submitted to the configured Formspree endpoint
-- Page metadata, canonical links, Open Graph/Twitter metadata, a social preview, sitemap, and robots rules
-- Cloudflare Pages response headers in `_headers`
+1. **YKB Clothing** — Full-stack clothing e-commerce platform with authentication, catalog, cart, checkout, orders, wishlist, reviews, and admin dashboard. (Node.js, Express, MySQL, JWT, bcrypt, Multer, Cloudinary, CORS, Nodemailer on Render).
+2. **Yankiii Barber Co.** — Full-stack barbershop booking platform with service browsing, barber selection, availability management, customer accounts, appointment booking, and admin management. (Node.js, Express, MySQL, JWT, bcrypt, Nodemailer, Express Rate Limit, CORS on Vercel).
 
-## Run locally
+## Pages & Structure
 
-From this repository root:
+- `index.html`: Hero, Selected Work, Capabilities/Stack, Short About, Contact CTA.
+- `projects.html`: Work overview with case study links and live project buttons.
+- `projects/ykb-clothing.html`: Comprehensive case study for YKB Clothing (problem, role, key features, stack, architecture, challenges, learnings).
+- `projects/yankiii-barber.html`: Comprehensive case study for Yankiii Barber Co. (problem, role, key features, stack, architecture, challenges, learnings).
+- `about.html`: Background, education (Computer Engineering Technology at PUP), core stack, and verified certifications (TESDA, Cybersecurity, Networking).
+- `contact.html`: Contact form supporting project type, budget, and timeline, submitting to Formspree, plus direct email and social links.
+- `privacy.html`: Data handling and privacy policy.
+- `404.html`: Custom 404 error page.
+
+## Local Development
+
+Run the lightweight local server:
 
 ```powershell
 npm start
 ```
 
-Then open <http://127.0.0.1:3000>. Node.js is the only local requirement; the server uses built-in modules and `package.json` has no dependencies.
+Then navigate to `http://localhost:3000`.
 
-## Project structure
+## Deployment
 
-```text
-index.html, about.html, services.html, projects.html, project.html, contact.html
-privacy.html, 404.html, _headers, robots.txt, sitemap.xml
-css/      shared, page-specific, responsive, and refinement styles
-js/       shared behavior, contact form, project data/list/detail, home cards
-media/    original profile and project images plus the social preview PNG (SVG source)
-server.js dependency-free local static server
-```
-
-To add a project, add a truthful entry to `js/projects-data.js` and place any real screenshot in `media/`. Do not add private repository links or features that cannot be verified.
-
-## Contact and privacy
-
-The contact form sends the submitted name, email, optional organization, inquiry type, and message to the Formspree endpoint in `contact.html`. The site does not run analytics scripts or intentionally set analytics or advertising cookies. See [privacy.html](privacy.html) for the site's data-handling summary.
-
-## Deploy to Cloudflare Pages
-
-Use the repository root as the output directory and leave the build command empty. Deploy the updated root files after reviewing the Git diff. The `_headers` file applies the static-site security headers on Cloudflare Pages.
+Configured for static hosting on Cloudflare Pages with HTTP headers in `_headers`, redirect rules in `_redirects`, and search indexing via `robots.txt` and `sitemap.xml`.

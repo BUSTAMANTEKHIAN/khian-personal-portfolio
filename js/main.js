@@ -39,12 +39,16 @@ function initNav() {
   if (!header || !toggle || !menu) return;
 
   const close = () => {
+    const wasOpen = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", "false");
     menu.classList.remove("is-open");
     menu.setAttribute("aria-hidden", "true");
     backdrop?.classList.remove("is-open");
     document.body.classList.remove("menu-open");
     menu.inert = true;
+    if (wasOpen && (menu.contains(document.activeElement) || document.activeElement === backdrop)) {
+      toggle.focus();
+    }
   };
 
   const open = () => {
@@ -62,8 +66,9 @@ function initNav() {
     toggle.getAttribute("aria-expanded") === "true" ? close() : open();
   });
   backdrop?.addEventListener("click", close);
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") close();
   });
 
   if (reduceMotion) return;
@@ -192,6 +197,54 @@ function initPageTransitions() {
   });
 }
 
+function initCertificates() {
+  const dialog = document.getElementById("cert-dialog");
+  if (!dialog) return;
+
+  const modalImg = dialog.querySelector("#cert-dialog-img");
+  const modalTitle = dialog.querySelector("#cert-dialog-title");
+  const closeBtn = dialog.querySelector("[data-cert-close]");
+  let lastActive = null;
+
+  const closeDialog = () => {
+    dialog.close();
+    if (modalImg) modalImg.src = "";
+    if (lastActive && typeof lastActive.focus === "function") {
+      lastActive.focus();
+    }
+  };
+
+  const openDialog = (src, title, triggerEl) => {
+    lastActive = triggerEl;
+    if (modalImg) {
+      modalImg.src = src;
+      modalImg.alt = title;
+    }
+    if (modalTitle) modalTitle.textContent = title;
+    dialog.showModal();
+    closeBtn?.focus();
+  };
+
+  document.querySelectorAll("[data-cert-open]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = btn.dataset.certSrc;
+      const title = btn.dataset.certTitle || "Certificate Preview";
+      openDialog(src, title, btn);
+    });
+  });
+
+  closeBtn?.addEventListener("click", closeDialog);
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) closeDialog();
+  });
+  dialog.addEventListener("cancel", () => {
+    if (modalImg) modalImg.src = "";
+    if (lastActive && typeof lastActive.focus === "function") {
+      lastActive.focus();
+    }
+  });
+}
+
 function initHeroReady() {
   requestAnimationFrame(() => document.documentElement.classList.add("is-ready"));
 }
@@ -205,5 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMagnetic();
   initCursorLabel();
   initFilters();
+  initCertificates();
   initPageTransitions();
 });
