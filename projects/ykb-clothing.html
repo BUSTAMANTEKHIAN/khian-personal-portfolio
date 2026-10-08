@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>YKB Clothing | Khian Bustamante</title>
+  <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
   <meta name="description" content="Case study: YKB Clothing, a full-stack clothing e-commerce platform with authentication, cart, checkout, orders, wishlist, reviews, and admin management.">
   <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/projects/ykb-clothing.html">
   <link rel="icon" href="../media/favicon.svg" type="image/svg+xml">
@@ -22,22 +23,23 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/case-study-fixes.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "YKB Clothing",
-    "applicationCategory": "ShoppingApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "description": "A full-stack clothing e-commerce platform with authentication, product management, cart, checkout, orders, wishlist, reviews, and administrative management.",
-    "author": {
-      "@type": "Person",
-      "name": "Khian Bustamante",
-      "url": "https://khian-personal-portfolio.pages.dev/"
-    },
-    "url": "https://ykb-ecommerce.onrender.com"
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "YKB Clothing",
+  "applicationCategory": "ShoppingApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A full-stack clothing e-commerce platform with authentication, product management, cart, checkout, orders, wishlist, reviews, and administrative management.",
+  "author": {
+    "@type": "Person",
+    "name": "Khian Bustamante",
+    "url": "https://khian-personal-portfolio.pages.dev/"
+  },
+  "url": "https://ykb-ecommerce.onrender.com"
+}
   </script>
 </head>
 <body>
@@ -86,23 +88,23 @@
         <article class="case-main prose">
           <div class="shot-grid reveal" data-reveal>
             <figure>
-              <img src="../media/project/ykb-01.webp" alt="YKB Clothing storefront homepage and featured apparel collections" width="1672" height="941" loading="eager">
+              <img src="../media/project/ykb-01.webp" alt="YKB Clothing storefront homepage and featured apparel collections" width="1672" height="941" loading="eager" decoding="async">
               <figcaption>01 — Homepage: Storefront landing page featuring apparel highlights and brand navigation.</figcaption>
             </figure>
             <figure>
-              <img src="../media/project/ykb/ykb-shop.png" alt="YKB Clothing product catalog shop page" width="1916" height="877" loading="lazy">
+              <img src="../media/project/ykb/ykb-shop.png" alt="YKB Clothing product catalog shop page" width="1916" height="877" loading="lazy" decoding="async">
               <figcaption>02 — Product Shop: Filterable catalog displaying available apparel items with pricing and categories.</figcaption>
             </figure>
             <figure>
-              <img src="../media/project/ykb/ykb-product.png" alt="YKB Clothing product detail page with size selection and reviews" width="1916" height="868" loading="lazy">
+              <img src="../media/project/ykb/ykb-product.png" alt="YKB Clothing product detail page with size selection and reviews" width="1916" height="868" loading="lazy" decoding="async">
               <figcaption>03 — Product Detail: Detailed view with product images, sizing options, customer reviews, and cart actions.</figcaption>
             </figure>
             <figure>
-              <img src="../media/project/ykb/ykb-cart.png" alt="YKB Clothing shopping cart drawer and order summary" width="1889" height="869" loading="lazy">
+              <img src="../media/project/ykb/ykb-cart.png" alt="YKB Clothing shopping cart drawer and order summary" width="1889" height="869" loading="lazy" decoding="async">
               <figcaption>04 — Shopping Cart: Real-time cart state with item quantities, price calculations, and checkout progression.</figcaption>
             </figure>
             <figure>
-              <img src="../media/project/ykb/ykb-admin.png" alt="YKB Clothing administrative management dashboard" width="1901" height="876" loading="lazy">
+              <img src="../media/project/ykb/ykb-admin.png" alt="YKB Clothing administrative management dashboard" width="1901" height="876" loading="lazy" decoding="async">
               <figcaption>05 — Admin Dashboard: Central management panel for products, inventory, order processing, and reviews.</figcaption>
             </figure>
           </div>
@@ -164,10 +166,13 @@
           <p>I would continue improving the project for production use by adding deeper automated testing, expanding third-party payment gateway integrations, improving order management analytics, and strengthening automated monitoring and deployment workflows.</p>
 
           <p>
-            <a class="btn btn-primary" href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
+            <a class="btn btn-primary" href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </p>
 
-          <p class="muted">Built as a complete full-stack e-commerce application from UI to database.</p>
+          <nav class="case-nav" aria-label="Case studies">
+            <a href="../projects.html"><small>Back</small>All work</a>
+            <a href="yankiii-barber.html"><small>Next</small>Yankiii Barber Co. &rarr;</a>
+          </nav>
         </article>
 
         <aside class="case-aside">

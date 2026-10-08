@@ -1,0 +1,327 @@
+/* =========================================================
+Privacy Page
+========================================================= */
+
+.privacy-hero {
+padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.privacy-hero-top {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+margin-bottom: 1.25rem;
+}
+
+.privacy-updated {
+margin: 0;
+font-family: var(--font-mono);
+font-size: var(--fs-small);
+color: var(--ink-soft);
+}
+
+.privacy-lead {
+max-width: 42rem;
+margin-top: 1.25rem;
+color: var(--ink-soft);
+font-size: clamp(1rem, 1.5vw, 1.15rem);
+line-height: 1.7;
+}
+
+/* =========================================================
+Summary
+========================================================= */
+
+.privacy-overview {
+padding-top: 0;
+}
+
+.privacy-summary-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 1px;
+border: 1px solid var(--line);
+background: var(--line);
+}
+
+.privacy-summary-card {
+min-width: 0;
+padding: clamp(1.25rem, 3vw, 2rem);
+background: var(--bg-2);
+}
+
+.privacy-number {
+margin: 0 0 2rem;
+font-family: var(--font-mono);
+font-size: var(--fs-small);
+color: var(--ink-soft);
+}
+
+.privacy-summary-card h2 {
+margin: 0 0 .7rem;
+font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.privacy-summary-card p:last-child {
+margin: 0;
+color: var(--ink-soft);
+line-height: 1.65;
+}
+
+/* =========================================================
+Main Content
+========================================================= */
+
+.privacy-content {
+padding-top: clamp(4rem, 8vw, 7rem);
+}
+
+.privacy-section {
+display: grid;
+grid-template-columns: minmax(9rem, 1fr) minmax(0, 3fr);
+gap: clamp(2rem, 6vw, 5rem);
+padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+border-top: 1px solid var(--line);
+}
+
+.privacy-section:first-child {
+border-top: 0;
+padding-top: 0;
+}
+
+.privacy-section-meta .kicker {
+margin: 0;
+}
+
+.privacy-section-body {
+min-width: 0;
+max-width: 48rem;
+}
+
+.privacy-section-body h2 {
+margin: 0 0 1.25rem;
+font-size: clamp(1.7rem, 3vw, 2.5rem);
+line-height: 1.05;
+}
+
+.privacy-section-body > p {
+max-width: 46rem;
+margin: 0;
+color: var(--ink-soft);
+line-height: 1.8;
+}
+
+/* =========================================================
+Form Data
+========================================================= */
+
+.privacy-data {
+margin-top: 2rem;
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+}
+
+.privacy-data-label,
+.privacy-email-label,
+.privacy-detail-label {
+margin: 0;
+font-family: var(--font-mono);
+font-size: var(--fs-small);
+color: var(--ink-soft);
+}
+
+.privacy-data-label {
+padding: 1rem 0;
+}
+
+.privacy-data-list {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+margin: 0;
+padding: 0;
+list-style: none;
+border-top: 1px solid var(--line);
+}
+
+.privacy-data-list li {
+padding: .9rem 0;
+color: var(--ink);
+border-bottom: 1px solid var(--line);
+}
+
+.privacy-data-list li:nth-child(odd) {
+padding-right: 1rem;
+border-right: 1px solid var(--line);
+}
+
+.privacy-data-list li:nth-child(even) {
+padding-left: 1rem;
+}
+
+.privacy-data-list li:nth-last-child(-n + 2) {
+border-bottom: 0;
+}
+
+/* =========================================================
+Email CTA
+========================================================= */
+
+.privacy-email-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1.5rem;
+margin-top: 2rem;
+padding: 1.25rem;
+border: 1px solid var(--line);
+background: var(--bg-2);
+}
+
+.privacy-email-label {
+margin-bottom: .35rem;
+}
+
+.privacy-email {
+display: inline-block;
+max-width: 100%;
+color: var(--ink);
+font-size: 1rem;
+font-weight: 500;
+overflow-wrap: anywhere;
+}
+
+.privacy-email:hover {
+color: var(--accent);
+}
+
+.privacy-email-card .btn {
+flex: 0 0 auto;
+}
+
+/* =========================================================
+Site Activity
+========================================================= */
+
+.privacy-detail-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1px;
+margin-top: 2rem;
+border: 1px solid var(--line);
+background: var(--line);
+}
+
+.privacy-detail {
+padding: 1.5rem;
+background: var(--bg-2);
+}
+
+.privacy-detail-label {
+margin-bottom: .8rem;
+}
+
+.privacy-detail p:last-child {
+margin: 0;
+color: var(--ink-soft);
+line-height: 1.7;
+}
+
+/* =========================================================
+Final Question CTA
+========================================================= */
+
+.privacy-question {
+padding-bottom: 1rem;
+}
+
+.privacy-question-email {
+display: inline-flex;
+align-items: center;
+gap: .65rem;
+margin-top: 1.5rem;
+color: var(--ink);
+font-size: clamp(1rem, 2vw, 1.2rem);
+font-weight: 500;
+overflow-wrap: anywhere;
+}
+
+.privacy-question-email:hover {
+color: var(--accent);
+}
+
+.privacy-question-email .arrow {
+flex: 0 0 auto;
+}
+
+/* =========================================================
+Responsive
+========================================================= */
+
+@media (max-width: 900px) {
+.privacy-summary-grid {
+grid-template-columns: 1fr;
+}
+
+.privacy-section {
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+
+.privacy-section-meta {
+padding-bottom: .25rem;
+}
+
+.privacy-section-body {
+max-width: none;
+}
+}
+
+@media (max-width: 640px) {
+.privacy-hero-top {
+align-items: flex-start;
+flex-direction: column;
+gap: .5rem;
+}
+
+.privacy-summary-card {
+padding: 1.25rem;
+}
+
+.privacy-number {
+margin-bottom: 1.5rem;
+}
+
+.privacy-data-list {
+grid-template-columns: 1fr;
+}
+
+.privacy-data-list li:nth-child(odd),
+.privacy-data-list li:nth-child(even) {
+padding-left: 0;
+padding-right: 0;
+border-right: 0;
+}
+
+.privacy-data-list li:last-child {
+border-bottom: 0;
+}
+
+.privacy-email-card {
+align-items: flex-start;
+flex-direction: column;
+}
+
+.privacy-email-card .btn {
+width: 100%;
+justify-content: center;
+}
+
+.privacy-detail-grid {
+grid-template-columns: 1fr;
+}
+
+.privacy-detail {
+padding: 1.25rem;
+}
+}

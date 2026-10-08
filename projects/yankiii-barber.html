@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Yankiii Barber Co. | Khian Bustamante</title>
+  <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
   <meta name="description" content="Case study: Yankiii Barber Co., a full-stack barbershop booking platform with service browsing, barber selection, availability, and administrative management.">
   <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/projects/yankiii-barber.html">
   <link rel="icon" href="../media/favicon.svg" type="image/svg+xml">
@@ -16,28 +17,31 @@
   <meta name="twitter:title" content="Yankiii Barber Co. | Khian Bustamante">
   <meta name="twitter:description" content="A full-stack barbershop booking platform with customer booking workflows and administrative management.">
   <meta name="twitter:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
-  <meta name="theme-color" content="#F4F1EA">
+  <!-- FIX: browser UI color now follows the system theme -->
+  <meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/case-study-fixes.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Yankiii Barber Co.",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "description": "A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.",
-    "author": {
-      "@type": "Person",
-      "name": "Khian Bustamante",
-      "url": "https://khian-personal-portfolio.pages.dev/"
-    },
-    "url": "https://yankiii-barber-co.vercel.app/"
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Yankiii Barber Co.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.",
+  "author": {
+    "@type": "Person",
+    "name": "Khian Bustamante",
+    "url": "https://khian-personal-portfolio.pages.dev/"
+  },
+  "url": "https://yankiii-barber-co.vercel.app/"
+}
   </script>
 </head>
 <body>
@@ -78,36 +82,39 @@
         <p class="kicker span-12">02 / Full-Stack Web Application</p>
         <h1 class="span-8">Yankiii Barber Co.</h1>
         <p class="lede span-7">A full-stack barbershop booking platform with service browsing, barber selection, availability, customer authentication, appointment booking, customer dashboard, and administrative management.</p>
+        <!-- FIX: primary action is now above the fold (it was only at the very bottom) -->
+        <div class="btn-row span-12">
+          <a class="btn btn-primary" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live site <span class="ext-arrow" aria-hidden="true">&nearr;</span><span class="sr-only">(opens in a new tab)</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <!-- FIX: inline style replaced with a class -->
+    <section class="section case-section">
       <div class="wrap case-layout">
         <article class="case-main prose">
-          <div class="shot-grid reveal" data-reveal>
+          <!-- FIX: removed "reveal" so the main screenshot is not invisible until JS runs -->
+          <div class="shot-grid">
             <figure>
-              <img src="../media/project/yankiii-01.webp" alt="Yankiii Barber Co. homepage hero and service highlights" width="1882" height="889" loading="eager">
+              <!-- FIX: fetchpriority for the above-the-fold image -->
+              <img src="../media/project/yankiii-01.webp" alt="Yankiii Barber Co. homepage hero and service highlights" width="1882" height="889" loading="eager" fetchpriority="high" decoding="async">
               <figcaption>01 — Homepage: Brand introduction, service highlights, and booking entry point.</figcaption>
             </figure>
-
             <figure>
-              <img src="../media/project/yankiii/yankiii-booking.png" alt="Yankiii Barber Co. appointment booking interface" width="1328" height="826" loading="lazy">
+              <img src="../media/project/yankiii/yankiii-booking.png" alt="Yankiii Barber Co. appointment booking interface" width="1328" height="826" loading="lazy" decoding="async">
               <figcaption>02 — Appointment Booking: Service selection, barber preference, schedule availability, and booking summary.</figcaption>
             </figure>
-
             <figure>
-              <img src="../media/project/yankiii/yankiii-dashboard.png" alt="Yankiii Barber Co. customer dashboard" width="1910" height="852" loading="lazy">
+              <img src="../media/project/yankiii/yankiii-dashboard.png" alt="Yankiii Barber Co. customer dashboard" width="1910" height="852" loading="lazy" decoding="async">
               <figcaption>03 — Customer Dashboard: Customer account overview displaying appointment history and booking status.</figcaption>
             </figure>
-
             <figure>
-              <img src="../media/project/yankiii/yankiii-admin.png" alt="Yankiii Barber Co. admin dashboard" width="1895" height="873" loading="lazy">
+              <img src="../media/project/yankiii/yankiii-admin.png" alt="Yankiii Barber Co. admin dashboard" width="1895" height="873" loading="lazy" decoding="async">
               <figcaption>04 — Admin Dashboard: Manage bookings, services, barbers, and operational barbershop data.</figcaption>
             </figure>
-
             <figure class="is-mobile">
               <div class="mobile-wrap">
-                <img src="../media/project/yankiii/yankiii-mobile.png" alt="Yankiii Barber Co. responsive mobile interface" width="330" height="715" loading="lazy">
+                <img src="../media/project/yankiii/yankiii-mobile.png" alt="Yankiii Barber Co. responsive mobile interface" width="330" height="715" loading="lazy" decoding="async">
               </div>
               <figcaption>05 — Mobile Experience: Responsive mobile interface designed for on-the-go service browsing and bookings.</figcaption>
             </figure>
@@ -123,7 +130,7 @@
           <div class="features-grid">
             <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Service browsing</span></div>
             <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Barber selection</span></div>
-            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Availability</span></div>
+            <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Barber availability</span></div>
             <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Appointment booking</span></div>
             <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Customer authentication</span></div>
             <div class="feature-item"><span class="feature-bullet" aria-hidden="true">&bull;</span><span>Customer dashboard</span></div>
@@ -135,10 +142,11 @@
           <h2>Stack</h2>
           <p>HTML, CSS, JavaScript, Node.js, Express.js, MySQL, JWT, bcrypt, Nodemailer, Express Rate Limit, and CORS. The application is deployed on Vercel.</p>
 
-          <h2>Architecture &amp; Technical Breakdown</h2>
+          <!-- FIX: sentence case to match every other heading -->
+          <h2>Architecture &amp; technical breakdown</h2>
           <div class="arch-grid">
             <div class="arch-card">
-              <span class="arch-label">Frontend + Backend</span>
+              <span class="arch-label">Frontend</span>
               <span class="arch-value">HTML / CSS / JavaScript</span>
             </div>
             <div class="arch-card">
@@ -154,12 +162,8 @@
               <span class="arch-value">JWT / bcrypt</span>
             </div>
             <div class="arch-card">
-              <span class="arch-label">Email</span>
-              <span class="arch-value">Nodemailer</span>
-            </div>
-            <div class="arch-card">
-              <span class="arch-label">Security / API</span>
-              <span class="arch-value">Express Rate Limit / CORS</span>
+              <span class="arch-label">Email / Security</span>
+              <span class="arch-value">Nodemailer / Rate Limit / CORS</span>
             </div>
             <div class="arch-card">
               <span class="arch-label">Deployment</span>
@@ -174,16 +178,20 @@
           <p>I would continue improving the system around production readiness, expanding automated end-to-end testing for peak booking concurrency, adding customer SMS notifications alongside email confirmations, and providing barbershop staff with richer operational reporting.</p>
 
           <p>
-            <a class="btn btn-primary" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
+            <!-- FIX: external link now uses the external arrow and tells screen readers it opens a new tab -->
+            <a class="btn btn-primary" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live site <span class="ext-arrow" aria-hidden="true">&nearr;</span><span class="sr-only">(opens in a new tab)</span></a>
           </p>
 
-          <p class="muted">Built as a full-stack portfolio project from frontend to backend API and database integration.</p>
+          <nav class="case-nav" aria-label="Case studies">
+            <a href="../projects.html"><small>Back</small>All work</a>
+            <a href="ykb-clothing.html"><small>Next</small>YKB Clothing &rarr;</a>
+          </nav>
         </article>
 
-        <aside class="case-aside">
+        <aside class="case-aside" aria-label="Project details">
           <dl>
             <dt>Live</dt>
-            <dd><a href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">yankiii-barber-co.vercel.app</a></dd>
+            <dd><a href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">yankiii-barber-co.vercel.app<span class="sr-only"> (opens in a new tab)</span></a></dd>
             <dt>Type</dt>
             <dd>Full-stack web application</dd>
             <dt>Backend</dt>

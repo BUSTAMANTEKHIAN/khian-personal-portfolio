@@ -1,0 +1,115 @@
+/* =========================================================
+   Case-study page overrides
+   Gallery styles live here so they do not duplicate styles.css.
+   ========================================================= */
+
+/* Remove the extra top spacing on case-study sections. */
+.case-section {
+  padding-top: 0;
+}
+
+/* Live-site button under the project introduction. */
+.page-intro .btn-row {
+  margin-top: 0.75rem;
+}
+
+/* =========================================================
+   Project screenshot gallery
+   - Featured screenshot spans the full content width.
+   - Remaining screenshots use a 2-column grid.
+   - Images keep their real aspect ratio: no forced cropping.
+   - Cards do not stretch to match the tallest item in a row.
+   ========================================================= */
+
+.case-main .shot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 1.25rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.case-main .shot-grid figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  min-width: 0;
+}
+
+.case-main .shot-grid figure > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: var(--bg-2);
+}
+
+.case-main .shot-grid > figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.case-main .shot-grid figcaption {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+
+/* Keep the portrait mobile screenshot readable without turning
+   its whole card into a tall empty frame. */
+.case-main .shot-grid figure.is-mobile {
+  background: var(--bg-2);
+}
+
+.case-main .shot-grid figure.is-mobile .mobile-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: var(--bg-2);
+}
+
+.case-main .shot-grid figure.is-mobile img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+/* Desktop/tablet: featured image full width + 2x2 supporting grid. */
+@media (min-width: 720px) {
+  .case-main .shot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-main .shot-grid > figure:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   Case-study layout fix for medium screens
+   ========================================================= */
+
+@media (min-width: 720px) and (max-width: 959px) {
+  .case-main,
+  .case-aside {
+    grid-column: 1 / -1;
+  }
+
+  .case-aside {
+    position: static;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+}

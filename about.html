@@ -27,8 +27,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Khian Bustamante",
-    "jobTitle": "Full-Stack Developer",
-    "url": "https://khian-personal-portfolio.pages.dev/about.html",
+    "jobTitle": "Student Developer",
+    "url": "https://khian-personal-portfolio.pages.dev/",
     "sameAs": [
       "https://github.com/BUSTAMANTEKHIAN",
       "https://www.linkedin.com/in/khianbustamante"
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section about-section">
       <div class="wrap about-block">
         <div class="about-photo reveal" data-reveal>
           <img src="media/images/khian.webp" alt="Portrait of Khian Bustamante" width="500" height="500">
@@ -98,9 +98,9 @@
         <div class="about-copy reveal" data-reveal data-stagger="1">
           <p>I am Khian Bustamante, a Computer Engineering Technology student at the Polytechnic University of the Philippines (2025 to present). I live in the Philippines.</p>
           <p class="quote">I care about code the next person (often future me) can read without a walkthrough.</p>
-          <p>Outside class I build complete web applications: frontend interfaces, Node.js and Express backend APIs, and relational MySQL schemas. YKB Clothing is a full-stack e-commerce store with catalog, cart, and checkout. Yankiii Barber Co. is a full-stack booking platform built around a realistic barbershop workflow.</p>
+          <p>Outside class I build complete web applications: frontend interfaces, Node.js and Express backend APIs, and relational MySQL schemas. <a href="projects/ykb-clothing.html">YKB Clothing</a> is a full-stack e-commerce store with catalog, cart, and checkout. <a href="projects/yankiii-barber.html">Yankiii Barber Co.</a> is a full-stack booking platform built around a realistic barbershop workflow.</p>
           <p>I am looking for a junior or intern developer role where I can contribute to production code and learn from a strong team. I also take small freelance projects when the scope is clear.</p>
-          <div class="btn-row" style="margin-top:1.25rem">
+          <div class="btn-row about-actions">
             <a class="btn btn-primary" href="contact.html">Get in touch <span class="arrow" aria-hidden="true">-&gt;</span></a>
             <a class="btn" href="Khian_D_Bustamante_Resume.pdf">Resume</a>
           </div>
@@ -108,50 +108,58 @@
       </div>
     </section>
 
-    <section aria-label="Stack">
-      <div class="wrap" style="padding-bottom:1rem">
-        <p class="kicker">Core Stack</p>
+    <section aria-labelledby="stack-heading">
+      <div class="wrap stack-head">
+        <h2 class="kicker" id="stack-heading">Core Stack</h2>
       </div>
+      <!-- Real list for screen readers; the scrolling strip below is decorative -->
+      <ul class="sr-only">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>Git</li><li>REST APIs</li>
+      </ul>
       <div class="marquee">
         <div class="marquee-track" aria-hidden="true">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
+          <div class="marquee-group">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
+          </div>
+          <div class="marquee-group">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section certificates-section" aria-label="Certificates">
+    <section class="section certificates-section" aria-labelledby="certs-heading">
       <div class="wrap">
-        <p class="kicker">Certificates</p>
+        <h2 class="kicker" id="certs-heading">Certificates</h2>
         <div class="certificates-grid">
           <figure class="cert-card">
-            <button type="button" class="cert-media" data-cert-open data-cert-src="assets/certificates/CertificateNC2.png" data-cert-title="TESDA Certification" aria-label="View TESDA Certification in full size">
+            <button type="button" class="cert-media" tabindex="-1" aria-hidden="true" data-cert-open data-cert-src="assets/certificates/CertificateNC2.png" data-cert-title="TESDA Certification">
               <img src="assets/certificates/CertificateNC2.png" alt="TESDA certification certificate" width="1080" height="1528" loading="lazy">
             </button>
-            <div class="cert-info">
-              <figcaption>TESDA Certification</figcaption>
-              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/CertificateNC2.png" data-cert-title="TESDA Certification">View</button>
-            </div>
+            <figcaption class="cert-info">
+              <span>TESDA Certification</span>
+              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/CertificateNC2.png" data-cert-title="TESDA Certification" aria-label="View TESDA Certification in full size">View</button>
+            </figcaption>
           </figure>
 
           <figure class="cert-card">
-            <button type="button" class="cert-media" data-cert-open data-cert-src="assets/certificates/introduction-to-cybersecurity.png" data-cert-title="Introduction to Cybersecurity" aria-label="View Introduction to Cybersecurity certificate in full size">
-              <img src="assets/certificates/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity certificate" width="600" height="600" loading="lazy">
+            <button type="button" class="cert-media" tabindex="-1" aria-hidden="true" data-cert-open data-cert-src="assets/certificates/introduction-to-cybersecurity.jpg" data-cert-title="Introduction to Cybersecurity">
+              <img src="assets/certificates/introduction-to-cybersecurity.jpg" alt="Introduction to Cybersecurity certificate" width="600" height="600" loading="lazy">
             </button>
-            <div class="cert-info">
-              <figcaption>Introduction to Cybersecurity</figcaption>
-              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/introduction-to-cybersecurity.png" data-cert-title="Introduction to Cybersecurity">View</button>
-            </div>
+            <figcaption class="cert-info">
+              <span>Introduction to Cybersecurity</span>
+              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/introduction-to-cybersecurity.jpg" data-cert-title="Introduction to Cybersecurity" aria-label="View Introduction to Cybersecurity certificate in full size">View</button>
+            </figcaption>
           </figure>
 
           <figure class="cert-card">
-            <button type="button" class="cert-media" data-cert-open data-cert-src="assets/certificates/networking-basics.png" data-cert-title="Networking Basics" aria-label="View Networking Basics certificate in full size">
-              <img src="assets/certificates/networking-basics.png" alt="Networking Basics certificate" width="650" height="650" loading="lazy">
+            <button type="button" class="cert-media" tabindex="-1" aria-hidden="true" data-cert-open data-cert-src="assets/certificates/networking-basics.jpg" data-cert-title="Networking Basics">
+              <img src="assets/certificates/networking-basics.jpg" alt="Networking Basics certificate" width="650" height="650" loading="lazy">
             </button>
-            <div class="cert-info">
-              <figcaption>Networking Basics</figcaption>
-              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/networking-basics.png" data-cert-title="Networking Basics">View</button>
-            </div>
+            <figcaption class="cert-info">
+              <span>Networking Basics</span>
+              <button type="button" class="cert-btn" data-cert-open data-cert-src="assets/certificates/networking-basics.jpg" data-cert-title="Networking Basics" aria-label="View Networking Basics certificate in full size">View</button>
+            </figcaption>
           </figure>
         </div>
       </div>

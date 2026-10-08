@@ -1,4 +1,4 @@
-/* Shared UI: theme, nav, reveals, magnetic CTA, cursor label, transitions. */
+/* Shared UI: theme, nav, reveals, magnetic CTA, cursor label. */
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isCoarse = window.matchMedia("(pointer: coarse)").matches;
@@ -11,9 +11,11 @@ function $$(sel, root = document) {
   return [...root.querySelectorAll(sel)];
 }
 
-function setTheme(theme) {
+function setTheme(theme, persist = false) {
   document.documentElement.dataset.theme = theme;
-  localStorage.setItem("theme", theme);
+  if (persist) {
+    try { localStorage.setItem("theme", theme); } catch {}
+  }
   const toggle = $("[data-theme-toggle]");
   if (toggle) {
     const dark = theme === "dark";
@@ -23,11 +25,13 @@ function setTheme(theme) {
 }
 
 function initTheme() {
-  const stored = localStorage.getItem("theme");
+  let stored = null;
+  try { stored = localStorage.getItem("theme"); } catch {}
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // Only the toggle persists a choice; first visits keep following the OS.
   setTheme(stored || (prefersDark ? "dark" : "light"));
   $("[data-theme-toggle]")?.addEventListener("click", () => {
-    setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+    setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
   });
 }
 
@@ -71,6 +75,14 @@ function initNav() {
     if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") close();
   });
 
+  // Close the panel if the window grows past the mobile breakpoint.
+  window.matchMedia("(min-width: 720px)").addEventListener("change", (e) => {
+    if (e.matches) close();
+  });
+
+  // Keyboard users tabbing into a hidden header should see it.
+  header.addEventListener("focusin", () => header.classList.remove("is-hidden"));
+
   if (reduceMotion) return;
 
   let lastY = window.scrollY;
@@ -93,6 +105,7 @@ function initProgress() {
   bar.style.transform = "scaleX(0)";
   bar.style.transformOrigin = "left";
   window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
   update();
 }
 
@@ -114,7 +127,8 @@ function initReveals() {
       el.classList.add("is-in");
       io.unobserve(el);
     });
-  }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+    // 0.05 so tall blocks (like the screenshot grid) still trigger on phones.
+  }, { threshold: 0.05, rootMargin: "0px 0px -8% 0px" });
 
   items.forEach((el, i) => {
     if (!el.dataset.stagger) el.dataset.stagger = String(i % 4);
@@ -168,31 +182,6 @@ function initFilters() {
     cards.forEach((card) => {
       const show = value === "all" || card.dataset.category === value;
       card.hidden = !show;
-    });
-  });
-}
-
-function sameOrigin(href) {
-  try {
-    const url = new URL(href, location.href);
-    return url.origin === location.origin && !url.hash;
-  } catch {
-    return false;
-  }
-}
-
-function initPageTransitions() {
-  if (reduceMotion || !document.startViewTransition) return;
-
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a[href]");
-    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (a.hasAttribute("download") || a.target === "_blank") return;
-    if (!sameOrigin(a.href)) return;
-    if (a.pathname === location.pathname && a.search === location.search) return;
-    e.preventDefault();
-    document.startViewTransition(() => {
-      location.href = a.href;
     });
   });
 }
@@ -259,5 +248,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursorLabel();
   initFilters();
   initCertificates();
-  initPageTransitions();
 });

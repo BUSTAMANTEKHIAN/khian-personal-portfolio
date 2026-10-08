@@ -8,14 +8,17 @@
   <link rel="canonical" href="https://khian-personal-portfolio.pages.dev/">
   <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Khian Bustamante">
   <meta property="og:title" content="Khian Bustamante | Full-Stack Developer">
   <meta property="og:description" content="Student developer who ships full-stack projects. Open to junior and intern developer roles.">
   <meta property="og:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
+  <meta property="og:image:alt" content="Khian Bustamante, full-stack developer portfolio">
   <meta property="og:url" content="https://khian-personal-portfolio.pages.dev/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Khian Bustamante | Full-Stack Developer">
   <meta name="twitter:description" content="Student developer who ships full-stack projects. Open to junior and intern developer roles.">
   <meta name="twitter:image" content="https://khian-personal-portfolio.pages.dev/media/og-image.png">
+  <meta name="twitter:image:alt" content="Khian Bustamante, full-stack developer portfolio">
   <meta name="theme-color" content="#F4F1EA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +31,9 @@
     "@type": "Person",
     "name": "Khian Bustamante",
     "jobTitle": "Student Developer",
+    "description": "Computer Engineering Technology student building full-stack web applications with Node.js, Express, and MySQL.",
     "url": "https://khian-personal-portfolio.pages.dev/",
+    "image": "https://khian-personal-portfolio.pages.dev/media/images/khian.webp",
     "sameAs": [
       "https://github.com/BUSTAMANTEKHIAN",
       "https://www.linkedin.com/in/khianbustamante"
@@ -53,16 +58,18 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="progress" data-progress aria-hidden="true"></div>
-  <div class="cursor-label" data-cursor-label>View -&gt;</div>
+  <!-- Custom cursor label (shown on hover over project cards). Decorative, so hidden from screen readers.
+       Make sure styles.css/main.js disable it on touch devices. -->
+  <div class="cursor-label" data-cursor-label aria-hidden="true">View -&gt;</div>
 
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html">Khian <span>B.</span></a>
+      <a class="brand" href="/">Khian <span>B.</span></a>
       <nav class="nav-desktop" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="projects.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="/" aria-current="page">Home</a>
+        <a href="/projects">Work</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
@@ -77,10 +84,10 @@
   </header>
   <div class="menu-backdrop" data-menu-backdrop></div>
   <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile" aria-hidden="true">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="projects.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="/" aria-current="page">Home</a>
+    <a href="/projects">Work</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
   </nav>
 
   <main id="main">
@@ -95,9 +102,9 @@
         <div class="hero-cta span-7">
           <p class="status"><span class="status-dot" aria-hidden="true"></span> Open to work</p>
           <div class="btn-row" style="margin-top:1.1rem">
-            <a class="btn btn-primary" data-magnetic href="projects.html">View my work <span class="arrow" aria-hidden="true">-&gt;</span></a>
-            <a class="btn" href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow" aria-hidden="true">-&gt;</span></a>
-            <a class="btn" href="Khian_D_Bustamante_Resume.pdf">Resume</a>
+            <a class="btn btn-primary" data-magnetic href="/projects">View my work <span class="arrow" aria-hidden="true">-&gt;</span></a>
+            <a class="btn" href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow" aria-hidden="true">-&gt;</span><span class="sr-only"> (opens in new tab)</span></a>
+            <a class="btn" href="Khian_D_Bustamante_Resume.pdf" target="_blank" rel="noopener">Resume <span class="sr-only">(PDF, opens in new tab)</span></a>
           </div>
         </div>
         <div class="hero-photo">
@@ -109,38 +116,38 @@
     <section class="section" id="work">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Selected work</p>
-          <p class="index">01 / 02</p>
+          <p class="kicker" role="heading" aria-level="2">Selected work</p>
+          <p class="index">2 projects</p>
         </div>
         <div class="work-list">
           <article class="work-card reveal" data-reveal data-stagger="0" data-cursor-view>
-            <a class="work-media" href="projects/ykb-clothing.html" aria-label="View YKB Clothing case study">
+            <a class="work-media" href="/projects/ykb-clothing.html" aria-label="View YKB Clothing case study">
               <img src="media/project/ykb-01.webp" alt="YKB Clothing storefront homepage" width="1672" height="941" loading="lazy">
             </a>
             <div class="work-meta">
               <div class="work-top"><span>01 / FULL-STACK E-COMMERCE</span></div>
-              <h2><a href="projects/ykb-clothing.html">YKB Clothing</a></h2>
+              <h2><a href="/projects/ykb-clothing">YKB Clothing</a></h2>
               <p>A full-stack clothing e-commerce platform with authentication, cart, checkout, orders, wishlist, reviews, and admin management.</p>
               <div class="card-tech">HTML · CSS · JavaScript · Node.js · Express · MySQL</div>
               <div class="btn-row">
-                <a class="btn btn-primary" href="projects/ykb-clothing.html">View case study <span class="arrow" aria-hidden="true">-&gt;</span></a>
-                <a class="btn" href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="btn btn-primary" href="/projects/ykb-clothing.html">View case study <span class="arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="btn" href="https://ykb-ecommerce.onrender.com" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span><span class="sr-only"> (opens in new tab)</span></a>
               </div>
             </div>
           </article>
 
           <article class="work-card is-flip reveal" data-reveal data-stagger="1" data-cursor-view>
-            <a class="work-media" href="projects/yankiii-barber.html" aria-label="View Yankiii Barber Co. case study">
+            <a class="work-media" href="/projects/yankiii-barber.html" aria-label="View Yankiii Barber Co. case study">
               <img src="media/project/yankiii-01.webp" alt="Yankiii Barber Co. website homepage" width="1882" height="889" loading="lazy">
             </a>
             <div class="work-meta">
               <div class="work-top"><span>02 / FULL-STACK WEB APPLICATION</span></div>
-              <h2><a href="projects/yankiii-barber.html">Yankiii Barber Co.</a></h2>
+              <h2><a href="/projects/yankiii-barber.html">Yankiii Barber Co.</a></h2>
               <p>A full-stack barbershop booking platform with services, barber selection, availability, customer accounts, appointment booking, and administrative tools.</p>
               <div class="card-tech">HTML · CSS · JavaScript · Node.js · Express · MySQL</div>
               <div class="btn-row">
-                <a class="btn btn-primary" href="projects/yankiii-barber.html">View case study <span class="arrow" aria-hidden="true">-&gt;</span></a>
-                <a class="btn" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="btn btn-primary" href="/projects/yankiii-barber">View case study <span class="arrow" aria-hidden="true">-&gt;</span></a>
+                <a class="btn" href="https://yankiii-barber-co.vercel.app/" target="_blank" rel="noopener noreferrer">Live site <span class="arrow" aria-hidden="true">-&gt;</span><span class="sr-only"> (opens in new tab)</span></a>
               </div>
             </div>
           </article>
@@ -151,8 +158,8 @@
     <section class="section" id="capabilities" aria-label="Capabilities and Stack" style="padding-top:0">
       <div class="wrap">
         <div class="section-head">
-          <p class="kicker">Capabilities &amp; Stack</p>
-          <p class="index">02 / 02</p>
+          <p class="kicker" role="heading" aria-level="2">Capabilities &amp; Stack</p>
+          <p class="index">Stack</p>
         </div>
         <div class="stats-grid reveal" data-reveal>
           <div class="stat-item">
@@ -160,16 +167,22 @@
             <span class="stat-label">Full-stack projects</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">7</span>
+            <!-- Was 7; the marquee below lists 8 technologies. -->
+            <span class="stat-num">8</span>
             <span class="stat-label">Core technologies</span>
           </div>
           <div class="stat-item">
+            <!-- TODO: show the 3 certifications (name, issuer, link) somewhere on the site, or remove this stat. -->
             <span class="stat-num">3</span>
             <span class="stat-label">Certifications</span>
           </div>
         </div>
       </div>
       <div class="marquee">
+        <!-- The scrolling track is decorative (it repeats the list), so screen readers get one clean list instead. -->
+        <ul class="sr-only">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>Git</li><li>REST APIs</li>
+        </ul>
         <div class="marquee-track" aria-hidden="true">
           <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
           <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Git</span><span>REST APIs</span>
@@ -180,13 +193,15 @@
     <section class="section" style="padding-top:0">
       <div class="wrap about-block">
         <div class="about-photo reveal" data-reveal>
-          <img src="media/images/khian.webp" alt="Khian Bustamante in a suit" width="500" height="500" loading="lazy">
+          <!-- TODO: swap in a second photo (e.g. media/images/khian-suit.webp). Same image as the hero for now,
+               so the alt is empty to avoid screen readers announcing the portrait twice. -->
+          <img src="media/images/khian.webp" alt="" width="500" height="500" loading="lazy">
         </div>
         <div class="about-copy reveal" data-reveal data-stagger="2">
-          <p class="kicker">About</p>
+          <p class="kicker" role="heading" aria-level="2">About</p>
           <p class="quote">I care about code the next person (often future me) can read without a walkthrough.</p>
-          <p>Computer Engineering Technology student at the Polytechnic University of the Philippines (PUP), 2025 to present. Focused on building production-ready full-stack applications with clear architecture, clean database schemas, and intuitive customer flows.</p>
-          <p><a href="about.html">More about me <span aria-hidden="true">-&gt;</span></a></p>
+          <p>Computer Engineering Technology student at the Polytechnic University of the Philippines (PUP), 2025 to present. Focused on building deployed full-stack applications with clear architecture, clean database schemas, and intuitive customer flows.</p>
+          <p><a href="/about.html">More about me <span aria-hidden="true">-&gt;</span></a></p>
         </div>
       </div>
     </section>
@@ -199,8 +214,8 @@
           <a class="mail-xl" href="mailto:khianbustamante1@gmail.com">khianbustamante1@gmail.com</a>
         </div>
         <div class="btn-row">
-          <a class="btn btn-primary" data-magnetic href="contact.html">Contact page <span class="arrow" aria-hidden="true">-&gt;</span></a>
-          <a class="btn" href="Khian_D_Bustamante_Resume.pdf">Resume</a>
+          <a class="btn btn-primary" data-magnetic href="/contact">Contact page <span class="arrow" aria-hidden="true">-&gt;</span></a>
+          <a class="btn" href="Khian_D_Bustamante_Resume.pdf" target="_blank" rel="noopener">Resume <span class="sr-only">(PDF, opens in new tab)</span></a>
         </div>
       </div>
     </section>
@@ -209,9 +224,9 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>&copy; 2026 Khian Bustamante</span>
-      <a href="privacy.html">Privacy</a>
-      <a href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/khianbustamante" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="/privacy">Privacy</a>
+      <a href="https://github.com/BUSTAMANTEKHIAN" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a>
+      <a href="https://www.linkedin.com/in/khianbustamante" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
     </div>
   </footer>
   <script src="js/main.js" defer></script>
